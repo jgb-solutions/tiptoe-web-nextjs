@@ -1,16 +1,19 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/Home.module.css';
+import Header from '../components/header';
+import HomeStyle from '../styles/home';
+
 
 export default function Home() {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
+    <HomeStyle.Container>
+      <Header />
+      <HomeStyle.SectionBox headerBox>
+        <HomeStyle.LogoBox >
+          <HomeStyle.Logo src="/images/logo.png" />
+        </HomeStyle.LogoBox>
+      </HomeStyle.SectionBox>
+      <HomeStyle.SectionBox backgroundColor={'#F4F4F4'}>
+        {/* <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
@@ -47,8 +50,9 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
-        </div>
-      </main>
+        </div> */}
+      </HomeStyle.SectionBox>
+
 
       <footer className={styles.footer}>
         <a
@@ -57,9 +61,9 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          <img src="/icons/vercel.svg" alt="Vercel Logo" className={styles.logo} />
         </a>
       </footer>
-    </div>
+    </HomeStyle.Container>
   )
 }
