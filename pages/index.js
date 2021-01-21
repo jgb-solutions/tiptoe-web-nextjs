@@ -1,37 +1,13 @@
 import Header from '../components/header';
 import HomeStyle from '../styles/home';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Link from 'next/link'
+import Link from 'next/link';
+import Footer from '../components/footer';
 
 
 const Home = (props) => {
   return (
     <HomeStyle.Container>
       <Header />
-
-      <HomeStyle.SectionBox headerBox large>
-        <HomeStyle.LogoBox >
-          <HomeStyle.Logo src="/images/logo.png" />
-        </HomeStyle.LogoBox>
-
-        <HomeStyle.Block flex direction={'row'} justifyContent={'space-between'}>
-          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
-            <HomeStyle.Poster src="/images/bg-top.png" />
-          </HomeStyle.Block>
-
-          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
-            <HomeStyle.Title color={'#fff'} textAlign={'center'} >Welcome to TipToe</HomeStyle.Title>
-            <HomeStyle.Paragraph marginTop={'-10px'} color={'#fff'}>The slogan goes here</HomeStyle.Paragraph>
-
-            <AnchorLink href='#download'>
-              <HomeStyle.DownloadButton>
-                Download the app
-              </HomeStyle.DownloadButton>
-            </AnchorLink>
-          </HomeStyle.Block>
-        </HomeStyle.Block>
-      </HomeStyle.SectionBox>
-
       <HomeStyle.SectionBox backgroundColor={'#F4F4F4'} large>
         <HomeStyle.SectionBox marginTop={'-170px'} backgroundColor={'#fff'} noPadding>
           <HomeStyle.SectionBox alignCenter backgroundColor={'#F4F4F4'} height={'65px'}>
@@ -201,31 +177,7 @@ const Home = (props) => {
         </HomeStyle.Block>
       </HomeStyle.SectionBox>
 
-      <HomeStyle.SectionBox backgroundColor={props.theme.colors.black} large>
-        <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
-          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
-            <Link href='/'>
-              <HomeStyle.LogoBox >
-                <HomeStyle.Logo src="/images/logo.png" />
-              </HomeStyle.LogoBox>
-            </Link>
-          </HomeStyle.Block>
-
-          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
-            <Link href='/'>
-              <HomeStyle.Paragraph color={`#fff`} pointer>
-                Themes and conditions
-              </HomeStyle.Paragraph>
-            </Link>
-          </HomeStyle.Block>
-        </HomeStyle.Block>
-
-        <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'center'}>
-          <HomeStyle.Paragraph color={`#fff`} pointer>
-            © Company name 2021
-          </HomeStyle.Paragraph>
-        </HomeStyle.Block>
-      </HomeStyle.SectionBox>
+      <Footer/>
     </HomeStyle.Container>
   )
 }
