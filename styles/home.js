@@ -4,17 +4,19 @@ const Container = styled.div`
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
+  justify-content: center;
   align-items: center
 `;
 
 const SectionBox = styled.div`
   width:100%;
-  padding: 3rem 23%;
-  flex: 1;
+  height:${props => props.height ? props.height  : ``};;
+  padding: ${props => props.large ? `3rem 20%` : ``};
+  flex: ${props => props.large ? `1` : ``};
   display: flex;
   flex-direction: column;
   ${props => props.alignCenter && `align-items: center; justify-content: center;`};
+  ${props => props.marginTop && `margin-top: ${props.marginTop}`};
   padding-bottom:10px;
   background-color: ${props => props.backgroundColor};
   ${props => props.headerBox && `
@@ -23,33 +25,47 @@ const SectionBox = styled.div`
     height: 50vh;
     padding-bottom:6rem;
   `};
+  @media (max-width: 1100px) {
+    margin-top: -40px;
+    padding-left:10px;
+    padding-right:10px;
+    ${props => props.noPadding && `
+      padding-left:0px;
+      padding-right:0px;
+    `}
+  } 
+
 `;
 
 const LogoBox = styled.div`
   ${props => props.marginTop && `margin-top:${props.marginTop}`};
   display: flex;
   flex-direction: row-reverse;
+  padding-right: 8%;
   @media (max-width: 1100px) {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    padding-right: 0px;
   }   
 `;
 
 const Logo = styled.img`
   width: 150px;
   height:50px;
-  margin-right: 8%;
-
 `;
 
 const Block = styled.div`
+  padding:10px;
   ${props => props.flex && `display:flex`};
+  ${props => props.width && `width:${props.width}`};
   ${props => props.direction && `flex-direction:${props.direction}`};
   ${props => props.justifyContent && `justify-content:${props.justifyContent}`};
   ${props => props.alignItems && `align-items:${props.alignItems}`};
   @media (max-width: 1100px) {
     flex-direction:column;
+    justify-content:center;
+    align-items:center;
     margin-top:10px;
   }    
 `;
@@ -57,12 +73,19 @@ const Block = styled.div`
 
 const Poster = styled.img`
   width: 80%;
+  border-radius:10px;
 `;
 
+const Models = styled.img`
+  width: 80%;
+  border-radius:100px;
+`;
 const Title = styled.h1`
   ${props => props.color && `color:${props.color}`};
   ${props => props.textAlign && `text-align:${props.textAlign}`};
   font-family: ${props => props.theme.font.semiBold};
+  font-size: ${props => props.size};
+  padding-top:10px;
 `;
 
 const Paragraph = styled.p`
@@ -71,7 +94,7 @@ const Paragraph = styled.p`
   font-family: ${props => props.theme.font.semiBold};
 `;
 
-const DownloadButton = styled.div`
+const DownloadButton = styled.button`
   background-color: ${props => props.theme.colors.shipCove};
   margin-top: 20px;
   padding: 15px 20px;
@@ -98,7 +121,8 @@ const HomeStyle = {
   Poster,
   Title,
   Paragraph,
-  DownloadButton
+  DownloadButton,
+  Models
 }
 
 export default HomeStyle;
