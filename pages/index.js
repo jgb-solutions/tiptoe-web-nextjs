@@ -6,9 +6,9 @@ import Footer from '../components/footer';
 const Home = (props) => {
   return (
     <Style.Container>
-      <Header />
+      <Header title="| Home" />
       <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
-        <Style.SectionBox marginTop={'-170px'} backgroundColor={'#fff'} noPadding>
+        <Style.SectionBox marginTop={'-170px'} shadow backgroundColor={'#fff'} noPadding>
           <Style.SectionBox alignCenter backgroundColor={props.theme.colors.gray} height={'65px'}>
             <Style.Title size={'1.5em'} >A title goes here!</Style.Title>
           </Style.SectionBox>
@@ -44,7 +44,7 @@ const Home = (props) => {
             </Style.Block>
 
             <Style.Block width={'50%'}>
-              <Style.Poster src="/images/bg5.jpg" />
+              <Style.Poster src="/images/bg4.png" />
             </Style.Block>
           </Style.Block>
 
@@ -70,13 +70,13 @@ const Home = (props) => {
             </Style.Block>
 
             <Style.Block width={'50%'}>
-              <Style.Poster src="/images/bg6.jpg" />
+              <Style.Poster src="/images/bg4.png" />
             </Style.Block>
           </Style.Block>
 
           <Style.Block flex direction={'row'} >
             <Style.Block width={'50%'}>
-              <Style.Poster src="/images/bg.png" />
+              <Style.Poster src="/images/bg4.png" />
             </Style.Block>
 
             <Style.Block width={'50%'}>
