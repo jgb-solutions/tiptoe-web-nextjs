@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const SectionBox = styled.div`
   width:100%;
-  height:${props => props.height ? props.height  : ``};;
+  height:${props => props.height ? props.height : ``};;
   padding: ${props => props.large ? `3rem 20%` : ``};
   flex: ${props => props.large ? `1` : ``};
   display: flex;
@@ -21,9 +21,9 @@ const SectionBox = styled.div`
   background-color: ${props => props.backgroundColor};
   ${props => props.headerBox && `
     background-color: ${props.theme.colors.shipCove}; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, ${props.theme.colors.shipCove} 30% , ${props.theme.colors.apricotPeach});
+    background-image: linear-gradient(to right, ${props.theme.colors.shipCove} 20% , ${props.theme.colors.nightshadz});
     height: 50vh;
-    padding-bottom:6rem;
+    padding-bottom:6rem; 
   `};
   ${props => props.terms && `
     flex-direction: row;
@@ -31,6 +31,10 @@ const SectionBox = styled.div`
     padding-left:10px;
     padding-right:10px;
   `};
+  ${props => props.shadow && `
+  box-shadow: 0px 4px 4px #ddd;
+  `};
+
   @media (max-width: 1100px) {
     margin-top: -40px;
     padding-top: 40px;
@@ -116,6 +120,12 @@ const Paragraph = styled.p`
   ${props => props.marginTop && `margin-top:${props.marginTop}`};
   ${props => props.color && `color:${props.color}`};
   ${props => props.pointer && `cursor:pointer`};
+  ${props => props.float && `float:${props.float};`};
+  ${props => props.justifyContent && `
+    display: flex;
+    flex-direction: ${props.direction};
+    justify-content: ${props.justifyContent};
+  `};
   font-family: ${props => props.theme.font.semiBold};
 `;
 
