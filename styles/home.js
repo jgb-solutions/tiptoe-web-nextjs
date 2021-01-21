@@ -67,6 +67,7 @@ const Block = styled.div`
     justify-content:center;
     align-items:center;
     margin-top:10px;
+    width:100%;
   }    
 `;
 
@@ -80,6 +81,13 @@ const Models = styled.img`
   width: 80%;
   border-radius:100px;
 `;
+
+const AppImage = styled.img`
+  width: 80%;
+  border-radius:10px;
+  cursor:pointer;
+`;
+
 const Title = styled.h1`
   ${props => props.color && `color:${props.color}`};
   ${props => props.textAlign && `text-align:${props.textAlign}`};
@@ -122,7 +130,8 @@ const HomeStyle = {
   Title,
   Paragraph,
   DownloadButton,
-  Models
+  Models,
+  AppImage
 }
 
 export default HomeStyle;

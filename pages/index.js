@@ -1,24 +1,28 @@
-import styles from '../styles/Home.module.css';
 import Header from '../components/header';
 import HomeStyle from '../styles/home';
-import AnchorLink from 'react-anchor-link-smooth-scroll'
+import AnchorLink from 'react-anchor-link-smooth-scroll';
+import Link  from 'next/link'
 
 
 const Home = (props) => {
   return (
     <HomeStyle.Container>
       <Header />
+
       <HomeStyle.SectionBox headerBox large>
         <HomeStyle.LogoBox >
           <HomeStyle.Logo src="/images/logo.png" />
         </HomeStyle.LogoBox>
+
         <HomeStyle.Block flex direction={'row'} justifyContent={'space-between'}>
           <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
             <HomeStyle.Poster src="/images/bg-top.png" />
           </HomeStyle.Block>
+
           <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
             <HomeStyle.Title color={'#fff'} textAlign={'center'} >Welcome to TipToe</HomeStyle.Title>
             <HomeStyle.Paragraph marginTop={'-10px'} color={'#fff'}>The slogan goes here</HomeStyle.Paragraph>
+
             <AnchorLink href='#download'>
               <HomeStyle.DownloadButton>
                 Download the app
@@ -27,22 +31,26 @@ const Home = (props) => {
           </HomeStyle.Block>
         </HomeStyle.Block>
       </HomeStyle.SectionBox>
+
       <HomeStyle.SectionBox backgroundColor={'#F4F4F4'} large>
         <HomeStyle.SectionBox marginTop={'-170px'} backgroundColor={'#fff'} noPadding>
           <HomeStyle.SectionBox alignCenter backgroundColor={'#F4F4F4'} height={'65px'}>
             <HomeStyle.Title size={'1.5em'} >A title goes here!</HomeStyle.Title>
           </HomeStyle.SectionBox>
+
           <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
             <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
               <HomeStyle.Title size={'1em'} >Screen 1</HomeStyle.Title>
               <HomeStyle.Poster src="/images/screen1.jpg" />
               <HomeStyle.Paragraph >Some descriptions goes here</HomeStyle.Paragraph>
             </HomeStyle.Block>
+
             <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
               <HomeStyle.Title size={'1em'} >Screen 2</HomeStyle.Title>
               <HomeStyle.Poster src="/images/screen2.jpg" />
               <HomeStyle.Paragraph >Some descriptions goes here</HomeStyle.Paragraph>
             </HomeStyle.Block>
+
             <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
               <HomeStyle.Title size={'1em'} >Screen 3</HomeStyle.Title>
               <HomeStyle.Poster src="/images/screen3.jpg" />
@@ -50,6 +58,7 @@ const Home = (props) => {
             </HomeStyle.Block>
           </HomeStyle.Block>
         </HomeStyle.SectionBox>
+
         <HomeStyle.SectionBox noPadding>
           <HomeStyle.Block flex direction={'row'} >
             <HomeStyle.Block width={'50%'}>
@@ -58,6 +67,7 @@ const Home = (props) => {
                 With the rising popularity of foot models in the adult industry, we would love to introduce you to TIPXTOE. Being that the entire world is now using social media to showcase their talents, TIPXTOE is providing a platform designed for foot models who are looking to add an additional stream of income. TIPXTOE will provide individuals the platform to have fun uploading endless content while providing an opportunity for extra earnings. If you love taking pictures/ videos of your feet or simply love to show off what you were blessed with then TIPXTOE is the right place.
               </HomeStyle.Paragraph>
             </HomeStyle.Block>
+
             <HomeStyle.Block width={'50%'}>
               <HomeStyle.Poster src="/images/bg5.jpg" />
             </HomeStyle.Block>
@@ -67,6 +77,7 @@ const Home = (props) => {
             <HomeStyle.Block width={'50%'}>
               <HomeStyle.Poster src="/images/bg4.png" />
             </HomeStyle.Block>
+
             <HomeStyle.Block width={'50%'}>
               <HomeStyle.Title size={'1.5em'} >Models</HomeStyle.Title>
               <HomeStyle.Paragraph >
@@ -82,6 +93,7 @@ const Home = (props) => {
                 Do you have a foot fetish? Well. TIPXTOE is here to quench your thirst!!! Our platform is designed for members who share the same passion as our models. TipXToe is where you will find the most attractive foot models showcasing the secret that lies between those toes.  I mean what's better than gorgeous feet teasing you with while you... well, we'll leave the rest up to your imagination.  Want to become an audience member? Well. this is how it works.  for the subscribers, you will create an account that will place you as an audience member. Where you will get to choose from any model registered and pay a monthly fee to view their content. Easy right?
               </HomeStyle.Paragraph>
             </HomeStyle.Block>
+
             <HomeStyle.Block width={'50%'}>
               <HomeStyle.Poster src="/images/bg6.jpg" />
             </HomeStyle.Block>
@@ -91,6 +103,7 @@ const Home = (props) => {
             <HomeStyle.Block width={'50%'}>
               <HomeStyle.Poster src="/images/bg.png" />
             </HomeStyle.Block>
+
             <HomeStyle.Block width={'50%'}>
               <HomeStyle.Title size={'1.5em'} >Security</HomeStyle.Title>
               <HomeStyle.Paragraph >
@@ -109,6 +122,7 @@ const Home = (props) => {
               With the rising popularity of Foot Models in the adult industry, we present to you TipXToe. The whole world is now using social media to showcase talent as well as hobbies that turn into income for those looking for extra earnings. If you take random pictures of your feet that you love to share or simply like to show off what you were blessed with TipXToe is the place for you.
             </HomeStyle.Paragraph>
           </HomeStyle.Block>
+
           <HomeStyle.Block width={'50%'}>
             <HomeStyle.Title size={'1.5em'} >Models</HomeStyle.Title>
             <HomeStyle.Paragraph >
@@ -124,6 +138,7 @@ const Home = (props) => {
               For those who share the same passion as our foot models, TipXToe is where you will find the most attractive models showcasing the secret that lies within the adult industry. I mean what is better than a gorgeous woman teasing you with her feet while you... yeah, we'll leave that up to your imagination. As a subscriber, you will create an account that will place you as an audience member. Audience members will subscribe to their models of choice and pay a monthly fee to view their content. Easy right?
             </HomeStyle.Paragraph>
           </HomeStyle.Block>
+
           <HomeStyle.Block width={'50%'}>
             <HomeStyle.Title size={'1.5em'} >Security</HomeStyle.Title>
             <HomeStyle.Paragraph >
@@ -137,6 +152,7 @@ const Home = (props) => {
         <HomeStyle.SectionBox alignCenter backgroundColor={'#F4F4F4'} height={'65px'}>
           <HomeStyle.Title size={'1.5em'} >Some of our models</HomeStyle.Title>
         </HomeStyle.SectionBox>
+
         <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
           <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
             <HomeStyle.Models src="https://img-storage-dev.tiptoe.app/models/image-1.png" />
@@ -164,8 +180,33 @@ const Home = (props) => {
         </HomeStyle.Block>
       </HomeStyle.SectionBox>
 
+      <HomeStyle.SectionBox backgroundColor={props.theme.colors.tundora} large id="download">
+        <HomeStyle.SectionBox alignCenter height={'65px'}>
+          <HomeStyle.Title size={'1.5em'} color={`#fff`}>Download the app</HomeStyle.Title>
+        </HomeStyle.SectionBox>
 
-      <footer className={styles.footer}>
+        <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
+          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
+            <Link href='/'>
+              <HomeStyle.AppImage src="/images/app.png" />
+            </Link>
+          </HomeStyle.Block>
+
+          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
+            <Link href='/'>
+              <HomeStyle.AppImage src="/images/play.png" />
+            </Link>
+          </HomeStyle.Block>
+
+        </HomeStyle.Block>
+      </HomeStyle.SectionBox>
+
+      <HomeStyle.SectionBox backgroundColor={props.theme.colors.black} large>
+        lkmfdlg
+      </HomeStyle.SectionBox>
+
+
+      {/* <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -174,7 +215,7 @@ const Home = (props) => {
           Powered by{' '}
           <img src="/icons/vercel.svg" alt="Vercel Logo" id="download" className={styles.logo} />
         </a>
-      </footer>
+      </footer> */}
     </HomeStyle.Container>
   )
 }
