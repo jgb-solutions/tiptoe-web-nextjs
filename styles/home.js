@@ -27,8 +27,10 @@ const SectionBox = styled.div`
   `};
   @media (max-width: 1100px) {
     margin-top: -40px;
+    padding-top: 40px;
     padding-left:10px;
     padding-right:10px;
+    padding-bottom:50px;
     ${props => props.noPadding && `
       padding-left:0px;
       padding-right:0px;
@@ -47,12 +49,17 @@ const LogoBox = styled.div`
     justify-content: center;
     align-items: center;
     padding-right: 0px;
+    padding-top:20px;
   }   
 `;
 
 const Logo = styled.img`
   width: 150px;
   height:50px;
+  @media (max-width: 1100px) {
+    width: 250px;
+    height:100px;
+  }  
 `;
 
 const Block = styled.div`
@@ -68,12 +75,15 @@ const Block = styled.div`
     align-items:center;
     margin-top:10px;
     width:100%;
+    ${props => props.model && `
+      flex-direction: row;
+      flex-wrap: wap;
+    `}
   }    
 `;
 
-
 const Poster = styled.img`
-  width: 80%;
+  width: 100%;
   border-radius:10px;
 `;
 
@@ -99,6 +109,7 @@ const Title = styled.h1`
 const Paragraph = styled.p`
   ${props => props.marginTop && `margin-top:${props.marginTop}`};
   ${props => props.color && `color:${props.color}`};
+  ${props => props.pointer && `cursor:pointer`};
   font-family: ${props => props.theme.font.semiBold};
 `;
 
@@ -117,6 +128,9 @@ const DownloadButton = styled.button`
     background-color: ${props => props.theme.colors.gray};
     color: ${props => props.theme.colors.black};
   }
+  @media (max-width: 1100px) {
+    margin-bottom:20px;
+  } 
 `;
 
 

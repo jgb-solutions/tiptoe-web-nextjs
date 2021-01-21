@@ -1,7 +1,7 @@
 import Header from '../components/header';
 import HomeStyle from '../styles/home';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Link  from 'next/link'
+import Link from 'next/link'
 
 
 const Home = (props) => {
@@ -153,7 +153,7 @@ const Home = (props) => {
           <HomeStyle.Title size={'1.5em'} >Some of our models</HomeStyle.Title>
         </HomeStyle.SectionBox>
 
-        <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
+        <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'} model>
           <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
             <HomeStyle.Models src="https://img-storage-dev.tiptoe.app/models/image-1.png" />
           </HomeStyle.Block>
@@ -202,20 +202,30 @@ const Home = (props) => {
       </HomeStyle.SectionBox>
 
       <HomeStyle.SectionBox backgroundColor={props.theme.colors.black} large>
-        lkmfdlg
+        <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
+          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
+            <Link href='/'>
+              <HomeStyle.LogoBox >
+                <HomeStyle.Logo src="/images/logo.png" />
+              </HomeStyle.LogoBox>
+            </Link>
+          </HomeStyle.Block>
+
+          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
+            <Link href='/'>
+              <HomeStyle.Paragraph color={`#fff`} pointer>
+                Themes and conditions
+              </HomeStyle.Paragraph>
+            </Link>
+          </HomeStyle.Block>
+        </HomeStyle.Block>
+
+        <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'center'}>
+          <HomeStyle.Paragraph color={`#fff`} pointer>
+            © Company name 2021
+          </HomeStyle.Paragraph>
+        </HomeStyle.Block>
       </HomeStyle.SectionBox>
-
-
-      {/* <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/icons/vercel.svg" alt="Vercel Logo" id="download" className={styles.logo} />
-        </a>
-      </footer> */}
     </HomeStyle.Container>
   )
 }
