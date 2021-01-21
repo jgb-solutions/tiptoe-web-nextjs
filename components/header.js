@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import HomeStyle from '../styles/home';
+import Style from '../styles/style';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const Header = () => {
@@ -14,28 +14,28 @@ const Header = () => {
       <link rel="manifest" href="/icons/site.webmanifest" />
     </Head>
 
-    <HomeStyle.SectionBox headerBox large>
-        <HomeStyle.LogoBox >
-          <HomeStyle.Logo src="/images/logo.png" />
-        </HomeStyle.LogoBox>
+    <Style.SectionBox headerBox large>
+        <Style.LogoBox >
+          <Style.Logo src="/images/logo.png" />
+        </Style.LogoBox>
 
-        <HomeStyle.Block flex direction={'row'} justifyContent={'space-between'}>
-          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
-            <HomeStyle.Poster src="/images/bg-top.png" />
-          </HomeStyle.Block>
+        <Style.Block flex direction={'row'} justifyContent={'space-between'}>
+          <Style.Block flex direction={'column'} alignItems={'center'}>
+            <Style.Poster src="/images/bg-top.png" />
+          </Style.Block>
 
-          <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
-            <HomeStyle.Title color={'#fff'} textAlign={'center'} >Welcome to TipToe</HomeStyle.Title>
-            <HomeStyle.Paragraph marginTop={'-10px'} color={'#fff'}>The slogan goes here</HomeStyle.Paragraph>
+          <Style.Block flex direction={'column'} alignItems={'center'}>
+            <Style.Title color={'#fff'} textAlign={'center'} >Welcome to TipToe</Style.Title>
+            <Style.Paragraph marginTop={'-10px'} color={'#fff'}>The slogan goes here</Style.Paragraph>
 
             <AnchorLink href='#download'>
-              <HomeStyle.DownloadButton>
+              <Style.DownloadButton>
                 Download the app
-              </HomeStyle.DownloadButton>
+              </Style.DownloadButton>
             </AnchorLink>
-          </HomeStyle.Block>
-        </HomeStyle.Block>
-      </HomeStyle.SectionBox>
+          </Style.Block>
+        </Style.Block>
+      </Style.SectionBox>
   </>)
 }
 

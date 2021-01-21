@@ -1,4 +1,4 @@
-import HomeStyle from '../styles/style';
+import Style from '../styles/style';
 import Link from 'next/link'
 
 const Footer = (props) => {
@@ -7,51 +7,51 @@ const Footer = (props) => {
   console.log(props)
 
   return <>
-    <HomeStyle.SectionBox backgroundColor={theme?.colors.tundora} large id="download">
-      <HomeStyle.SectionBox alignCenter height={'65px'}>
-        <HomeStyle.Title size={'1.5em'} color={`#fff`}>Download the app</HomeStyle.Title>
-      </HomeStyle.SectionBox>
+    <Style.SectionBox backgroundColor={theme?.colors.tundora} large id="download">
+      <Style.SectionBox alignCenter height={'65px'}>
+        <Style.Title size={'1.5em'} color={`#fff`}>Download the app</Style.Title>
+      </Style.SectionBox>
 
-      <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
-        <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
+      <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
+        <Style.Block flex direction={'column'} alignItems={'center'}>
           <Link href='/'>
-            <HomeStyle.AppImage src="/images/app.png" />
+            <Style.AppImage src="/images/app.png" />
           </Link>
-        </HomeStyle.Block>
+        </Style.Block>
 
-        <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
+        <Style.Block flex direction={'column'} alignItems={'center'}>
           <Link href='/'>
-            <HomeStyle.AppImage src="/images/play.png" />
+            <Style.AppImage src="/images/play.png" />
           </Link>
-        </HomeStyle.Block>
+        </Style.Block>
 
-      </HomeStyle.Block>
-    </HomeStyle.SectionBox>
-    <HomeStyle.SectionBox backgroundColor={'#010101'} large>
-      <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
-        <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
+      </Style.Block>
+    </Style.SectionBox>
+    <Style.SectionBox backgroundColor={'#010101'} large>
+      <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
+        <Style.Block flex direction={'column'} alignItems={'center'}>
           <Link href='/'>
-            <HomeStyle.LogoBox >
-              <HomeStyle.Logo src="/images/logo.png" />
-            </HomeStyle.LogoBox>
+            <Style.LogoBox >
+              <Style.Logo src="/images/logo.png" />
+            </Style.LogoBox>
           </Link>
-        </HomeStyle.Block>
+        </Style.Block>
 
-        <HomeStyle.Block flex direction={'column'} alignItems={'center'}>
+        <Style.Block flex direction={'column'} alignItems={'center'}>
           <Link href='/terms-condition'>
-            <HomeStyle.Paragraph color={`#fff`} pointer>
+            <Style.Paragraph color={`#fff`} pointer>
               Terms & Condition
-            </HomeStyle.Paragraph>
+            </Style.Paragraph>
           </Link>
-        </HomeStyle.Block>
-      </HomeStyle.Block>
+        </Style.Block>
+      </Style.Block>
 
-      <HomeStyle.Block flex direction={'row'} alignItems={'center'} justifyContent={'center'}>
-        <HomeStyle.Paragraph color={`#fff`} pointer>
+      <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'center'}>
+        <Style.Paragraph color={`#fff`} pointer>
           © Andre G. Holdings LLC 2020
-    </HomeStyle.Paragraph>
-      </HomeStyle.Block>
-    </HomeStyle.SectionBox>
+    </Style.Paragraph>
+      </Style.Block>
+    </Style.SectionBox>
   </>
 }
 
