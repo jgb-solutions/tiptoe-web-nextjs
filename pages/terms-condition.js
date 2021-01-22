@@ -1,11 +1,7 @@
-// import Header from '../components/header';
-// import Footer from '../components/footer';
+import Footer from '../components/footer';
 import Style from '../styles/style';
 import Link from 'next/link';
 import Head from 'next/head';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHome } from '@fortawesome/free-solid-svg-icons'
 
 
 const Home = (props) => {
@@ -760,7 +756,7 @@ const Home = (props) => {
         </Style.SectionBox>
       </Style.SectionBox>
 
-      {/* <Footer theme={props.theme} /> */}
+      <Footer theme={props.theme} />
     </Style.Container>
   )
 }

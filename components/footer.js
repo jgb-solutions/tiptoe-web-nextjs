@@ -7,7 +7,7 @@ const Footer = (props) => {
   console.log(props)
 
   return <>
-    <Style.SectionBox backgroundColor={theme?.colors.tundora} large id="download">
+    <Style.SectionBox backgroundColor={theme?.colors.nightshadz} large id="download">
       <Style.SectionBox alignCenter height={'65px'}>
         <Style.Title size={'1.5em'} color={`#fff`}>Download the app</Style.Title>
       </Style.SectionBox>
@@ -27,29 +27,27 @@ const Footer = (props) => {
 
       </Style.Block>
     </Style.SectionBox>
-    <Style.SectionBox backgroundColor={'#010101'} large>
+    <Style.SectionBox borderTop={`#fff`} backgroundColor={'#010101'} large>
       <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
-        <Style.Block flex direction={'column'} alignItems={'center'}>
+        <Style.Block flex direction={'column'} alignItems={'left'} justifyContent={'flex-start'}>
           <Link href='/'>
-            <Style.LogoBox >
-              <Style.Logo src="/images/logo.png" />
-            </Style.LogoBox>
+            <Style.Logo src="/images/logo.png" />
           </Link>
+
+          <Style.Paragraph color={`#fff`} pointer>
+            © Andre G. Holdings LLC {(new Date).getFullYear()}
+          </Style.Paragraph>
         </Style.Block>
 
-        <Style.Block flex direction={'column'} alignItems={'center'}>
+        <Style.Block flex direction={'column'} alignItems={'right'} justifyContent={'flex-end'} >
+          <Style.Title size={'1.2em'} color={`#fff`}>Join Tiptoe Newsletter</Style.Title>
+          <Style.Input placeholder="Your email here" />
           <Link href='/terms-condition'>
             <Style.Paragraph color={`#fff`} pointer>
               Terms & Condition
             </Style.Paragraph>
           </Link>
         </Style.Block>
-      </Style.Block>
-
-      <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'center'}>
-        <Style.Paragraph color={`#fff`} pointer>
-          © Andre G. Holdings LLC 2020
-    </Style.Paragraph>
       </Style.Block>
     </Style.SectionBox>
   </>
