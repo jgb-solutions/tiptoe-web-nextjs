@@ -9,8 +9,7 @@ const theme = {
     gray: '#F4F4F4'
   },
   font: {
-    regular: "Inter_400Regular",
-    semiBold: "Inter_600SemiBold",
+    regular: "Open Sans",
   },
 };
 

@@ -17,11 +17,12 @@ const SectionBox = styled.div`
   flex-direction: column;
   ${props => props.alignCenter && `align-items: center; justify-content: center;`};
   ${props => props.marginTop && `margin-top: ${props.marginTop}`};
+  ${props => props.borderTop && `border-top: 1px solid ${props.borderTop}`};
   padding-bottom:10px;
   background-color: ${props => props.backgroundColor};
   ${props => props.headerBox && `
     background-color: ${props.theme.colors.shipCove}; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, ${props.theme.colors.shipCove} 20% , ${props.theme.colors.nightshadz});
+    background-image: linear-gradient(to right, ${props.theme.colors.black} 20% , ${props.theme.colors.nightshadz});
     height: 50vh;
     padding-bottom:6rem; 
   `};
@@ -32,7 +33,7 @@ const SectionBox = styled.div`
     padding-right:10px;
   `};
   ${props => props.shadow && `
-  box-shadow: 0px 4px 4px #ddd;
+    box-shadow: 0px 4px 4px #ddd;
   `};
 
   @media (max-width: 1100px) {
@@ -49,18 +50,72 @@ const SectionBox = styled.div`
 
 `;
 
-const LogoBox = styled.div`
-  ${props => props.marginTop && `margin-top:${props.marginTop}`};
-  display: flex;
-  flex-direction: row-reverse;
-  padding-right: 8%;
+
+const PrimaryButton = styled.button`
+  background-color: transparent;
+  margin-top: 20px;
+  padding: 15px 20px;
+  border-radius: 50px;
+  border: 2px solid #fff;
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center; 
+  cursor:pointer;
+  color: #fff;
+  :hover{
+    border: 2px solid ${props => props.theme.colors.nightshadz};
+    background-color: #fff;
+    color: ${props => props.theme.colors.tundora};
+  }
   @media (max-width: 1100px) {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding-right: 0px;
-    padding-top:20px;
-  }   
+    margin-bottom:20px;
+  } 
+`;
+
+const Models = styled.img`
+  width: 100px;
+  height: 100px;
+  margin:10px;
+  border-radius:100px;
+  padding:2px;
+  border:2px solid ${props => props.theme.colors.nightshadz};
+`;
+
+const SecondaryButton = styled.button`
+background-color: #fff;
+  padding: 10px;
+  border-radius: 100px;
+  border: 2px solid ${props => props.theme.colors.nightshadz};
+  display:flex;
+  flex-direction:row;
+  justify-content: center;
+  align-items: center; 
+  cursor:pointer;
+  color: ${props => props.theme.colors.tundora};
+  :hover{
+    border: 2px solid #fff;
+    background-color: ${props => props.theme.colors.nightshadz};
+    color: #fff;
+  }
+  @media (max-width: 1100px) {
+    margin-bottom:20px;
+  } 
+`;
+
+
+const Paragraph = styled.p`
+  ${props => props.marginTop && `margin-top:${props.marginTop}`};
+  ${props => props.color && `color:${props.color}`};
+  ${props => props.pointer && `cursor:pointer`};
+  ${props => props.float && `float:${props.float};`};
+  ${props => props.textAlign && `text-align: ${props.textAlign}`};
+  ${props => props.justifyContent && `
+    display: flex;
+    flex-direction: ${props.direction};
+    justify-content: ${props.justifyContent};
+  `};
+  font-family: ${props => props.theme.font.regular};
 `;
 
 const Logo = styled.img`
@@ -73,12 +128,14 @@ const Logo = styled.img`
 `;
 
 const Block = styled.div`
-  padding:10px;
-  ${props => props.flex && `display:flex`};
+  padding:${props => props.noPadding ? `0px` : `10px`};
+  ${props => props.flex && `display:flex;`};
   ${props => props.width && `width:${props.width}`};
   ${props => props.direction && `flex-direction:${props.direction}`};
   ${props => props.justifyContent && `justify-content:${props.justifyContent}`};
   ${props => props.alignItems && `align-items:${props.alignItems}`};
+  ${props => props.marginButtom && `margin-bottom: 10px`};
+
   @media (max-width: 1100px) {
     flex-direction:column;
     justify-content:center;
@@ -89,7 +146,20 @@ const Block = styled.div`
       flex-direction: row;
       flex-wrap: wap;
     `}
-  }    
+  }  
+  ${props => props.shadow && `
+    box-shadow: 0px 4px 4px #ddd;
+  `};  
+`;
+
+const TopImage = styled.img`
+  width: 400px;
+  @media (max-width: 1100px) {
+    width:100%;
+    margin-bottom:-100px;
+    margin-top:0px;
+  } 
+  border-radius:10px;
 `;
 
 const Poster = styled.img`
@@ -97,37 +167,32 @@ const Poster = styled.img`
   border-radius:10px;
 `;
 
-const Models = styled.img`
-  width: 80%;
-  border-radius:100px;
-`;
 
 const AppImage = styled.img`
-  width: 80%;
+  width: 350px;
+  height:120px;
   border-radius:10px;
   cursor:pointer;
+  @media (max-width: 1100px) {
+    width:80%;
+  } 
 `;
 
 const Title = styled.h1`
   ${props => props.color && `color:${props.color}`};
   ${props => props.textAlign && `text-align:${props.textAlign}`};
-  font-family: ${props => props.theme.font.semiBold};
+  font-family: ${props => props.theme.font.regular};
   font-size: ${props => props.size};
-  padding-top:10px;
+  ${props => props.paddingTop && `padding-top:${props.paddingTop}`};
+  text-transform: uppercase;
 `;
 
-const Paragraph = styled.p`
-  ${props => props.marginTop && `margin-top:${props.marginTop}`};
-  ${props => props.color && `color:${props.color}`};
-  ${props => props.pointer && `cursor:pointer`};
-  ${props => props.float && `float:${props.float};`};
-  ${props => props.justifyContent && `
-    display: flex;
-    flex-direction: ${props.direction};
-    justify-content: ${props.justifyContent};
-  `};
-  font-family: ${props => props.theme.font.semiBold};
+const Input = styled.input`
+  border: 2px solid ${props => props.theme.colors.nightshadz};
+  border-radius:50px;
+  padding:10px 30px;
 `;
+
 
 const UlList = styled.ul`
   list-style:none;
@@ -138,42 +203,24 @@ const Bolt = styled.b`
 
 const LiList = styled.li``;
 
-const DownloadButton = styled.button`
-  background-color: ${props => props.theme.colors.shipCove};
-  margin-top: 20px;
-  padding: 15px 20px;
-  border-radius: 4px;
-  display:flex;
-  flex-direction:row;
-  justify-content: center;
-  align-items: center; 
-  cursor:pointer;
-  color:white;
-  :hover{
-    background-color: ${props => props.theme.colors.gray};
-    color: ${props => props.theme.colors.black};
-  }
-  @media (max-width: 1100px) {
-    margin-bottom:20px;
-  } 
-`;
-
 
 const Style = {
   Container,
   SectionBox,
-  LogoBox,
   Logo,
   Block,
   Poster,
   Title,
   Paragraph,
-  DownloadButton,
+  PrimaryButton,
+  SecondaryButton,
   Models,
   AppImage,
   UlList,
   LiList,
-  Bolt
+  Bolt,
+  TopImage,
+  Input
 }
 
 export default Style;

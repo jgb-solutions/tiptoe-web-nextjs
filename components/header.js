@@ -16,27 +16,27 @@ const Header = (props) => {
     </Head>
 
     <Style.SectionBox headerBox large>
-        <Style.LogoBox >
+
+      <Style.Block flex direction={'row-reverse'} justifyContent={'space-between'}>
+
+
+        <Style.Block flex direction={'column'} alignItems={'center'}>
           <Style.Logo src="/images/logo.png" />
-        </Style.LogoBox>
+          <Style.Title color={'#fff'} textAlign={'center'} >Welcome to TipToe</Style.Title>
+          <Style.Paragraph marginTop={'-10px'} color={'#fff'}>The slogan goes here</Style.Paragraph>
 
-        <Style.Block flex direction={'row'} justifyContent={'space-between'}>
-          <Style.Block flex direction={'column'} alignItems={'center'}>
-            <Style.Poster src="/images/bg-top.png" />
-          </Style.Block>
-
-          <Style.Block flex direction={'column'} alignItems={'center'}>
-            <Style.Title color={'#fff'} textAlign={'center'} >Welcome to TipToe</Style.Title>
-            <Style.Paragraph marginTop={'-10px'} color={'#fff'}>The slogan goes here</Style.Paragraph>
-
-            <AnchorLink href='#download'>
-              <Style.DownloadButton>
-                Download the app
-              </Style.DownloadButton>
-            </AnchorLink>
-          </Style.Block>
+          <AnchorLink href='#download'>
+            <Style.PrimaryButton>
+              Download the app
+              </Style.PrimaryButton>
+          </AnchorLink>
         </Style.Block>
-      </Style.SectionBox>
+
+        <Style.Block flex direction={'column'} alignItems={'center'}>
+          <Style.TopImage src="/images/img11.png" />
+        </Style.Block>
+      </Style.Block>
+    </Style.SectionBox>
   </>)
 }
 
