@@ -14,8 +14,8 @@ const Home = (props) => {
     <Style.Container>
       <Header title="| Home" />
       <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
-        <Style.SectionBox marginTop={'-250px'} shadow backgroundColor={'#fff'} noPadding>
-          <Style.SectionBox alignCenter backgroundColor={props.theme.colors.gray} height={'65px'}>
+        <Style.SectionBox marginBottom={'30px'} marginTop={'-250px'} shadow backgroundColor={'#fff'} noPadding rounded>
+          <Style.SectionBox alignCenter backgroundColor={props.theme.colors.gray} height={'65px'} roundedTop>
             <Style.Title size={'1.5em'} >A title goes here!</Style.Title>
           </Style.SectionBox>
 
@@ -36,10 +36,13 @@ const Home = (props) => {
 
         <Style.SectionBox noPadding>
           <Style.Block marginButtom shadow flex direction={'row'} justifyContent={'center'}>
-            <Style.Block  width={'50%'}  flex direction={'column'} justifyContent={'center'}>
+            <Style.Block width={'50%'} flex direction={'column'} justifyContent={'center'}>
               <Style.Title size={'1.5em'} >Welcome To TipXToe</Style.Title>
               <Style.Paragraph textAlign={'justify'}>
-                With the rising popularity of foot models in the adult industry, we would love to introduce you to TIPXTOE. Being that the entire world is now using social media to showcase their talents, TIPXTOE is providing a platform designed for foot models who are looking to add an additional stream of income. TIPXTOE will provide individuals the platform to have fun uploading endless content while providing an opportunity for extra earnings. If you love taking pictures/ videos of your feet or simply love to show off what you were blessed with then TIPXTOE is the right place.
+                With the rising popularity of foot models in the adult industry, we would love to introduce you to TIPXTOE. Being that the entire world is now using social media to showcase their talents, TIPXTOE is providing a platform designed for foot models who are looking to add an additional stream of income.
+              </Style.Paragraph>
+              <Style.Paragraph textAlign={'justify'}>
+                TIPXTOE will provide individuals the platform to have fun uploading endless content while providing an opportunity for extra earnings. If you love taking pictures/ videos of your feet or simply love to show off what you were blessed with then TIPXTOE is the right place.
               </Style.Paragraph>
             </Style.Block>
 
@@ -56,7 +59,10 @@ const Home = (props) => {
             <Style.Block width={'50%'} flex direction={'column'} justifyContent={'center'}>
               <Style.Title size={'1.5em'} >Models</Style.Title>
               <Style.Paragraph textAlign={'justify'}>
-                The process is quite simple for any model looking to earn extra income utilizing their shared content. All you have to do is create an account with TIPXTOE that will be utilized as your platform and online business. You will have the opportunity to generate as much income as possible by promoting your account with TIPXTOE to all of your followers. Once your TIPXTOE account is reviewed for approval you will have the power to upload pictures, videos, or indulge in private chats with your audience (subscribers).  What is great about TIPXTOE is that we give you the option to set a monthly fee for your audience members, you will also be allowed to adjust your rates as you please.
+                The process is quite simple for any model looking to earn extra income utilizing their shared content. All you have to do is create an account with TIPXTOE that will be utilized as your platform and online business. You will have the opportunity to generate as much income as possible by promoting your account with TIPXTOE to all of your followers.
+              </Style.Paragraph>
+              <Style.Paragraph textAlign={'justify'}>
+                Once your TIPXTOE account is reviewed for approval you will have the power to upload pictures, videos, or indulge in private chats with your audience (subscribers).  What is great about TIPXTOE is that we give you the option to set a monthly fee for your audience members, you will also be allowed to adjust your rates as you please.
               </Style.Paragraph>
             </Style.Block>
           </Style.Block>
@@ -65,7 +71,10 @@ const Home = (props) => {
             <Style.Block width={'50%'} flex direction={'column'} justifyContent={'center'}>
               <Style.Title size={'1.5em'} >Audience</Style.Title>
               <Style.Paragraph textAlign={'justify'}>
-                Do you have a foot fetish? Well. TIPXTOE is here to quench your thirst!!! Our platform is designed for members who share the same passion as our models. TipXToe is where you will find the most attractive foot models showcasing the secret that lies between those toes.  I mean what's better than gorgeous feet teasing you with while you... well, we'll leave the rest up to your imagination.  Want to become an audience member? Well. this is how it works.  for the subscribers, you will create an account that will place you as an audience member. Where you will get to choose from any model registered and pay a monthly fee to view their content. Easy right?
+                Do you have a foot fetish? Well. TIPXTOE is here to quench your thirst!!! Our platform is designed for members who share the same passion as our models. TipXToe is where you will find the most attractive foot models showcasing the secret that lies between those toes.  I mean what's better than gorgeous feet teasing you with while you... well, we'll leave the rest up to your imagination.
+              </Style.Paragraph>
+              <Style.Paragraph textAlign={'justify'}>
+                Want to become an audience member? Well. this is how it works.  for the subscribers, you will create an account that will place you as an audience member. Where you will get to choose from any model registered and pay a monthly fee to view their content. Easy right?
               </Style.Paragraph>
             </Style.Block>
 
@@ -82,7 +91,9 @@ const Home = (props) => {
             <Style.Block width={'50%'} flex direction={'column'} justifyContent={'center'}>
               <Style.Title size={'1.5em'} >Security</Style.Title>
               <Style.Paragraph textAlign={'justify'}>
-                With how the internet can be a scary place we've teamed up with top professionals on keeping our platform as safe and secure as possible. Your information will not be stored on the website but a third party will have all private information encrypted and locked in a location where even we can't get to it. Meaning we have you in a place where you can be as free as possible when it comes to your privacy. With that being said WELCOME TO TIPXTOE.
+                With how the internet can be a scary place we've teamed up with top professionals on keeping our platform as safe and secure as possible. Your information will not be stored on the website but a third party will have all private information encrypted and locked in a location where even we can't get to it.
+              </Style.Paragraph>
+              <Style.Paragraph textAlign={'justify'}>Meaning we have you in a place where you can be as free as possible when it comes to your privacy. With that being said WELCOME TO TIPXTOE.
               </Style.Paragraph>
             </Style.Block>
           </Style.Block>
@@ -132,7 +143,7 @@ const Home = (props) => {
           <Style.SecondaryButton onClick={prev}>Prev</Style.SecondaryButton>
           <Whirligig
             visibleSlides={5}
-            animationDuration= {500}
+            animationDuration={500}
             className='slide'
             // gutter="1em"
             ref={(_whirligigInstance) => { whirligig = _whirligigInstance }}

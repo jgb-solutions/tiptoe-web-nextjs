@@ -16,9 +16,9 @@ const Home = (props) => {
         <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
         <link rel="manifest" href="/icons/site.webmanifest" />
       </Head>
-      <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
-        <Style.SectionBox backgroundColor={'#fff'} noPadding>
-          <Style.SectionBox alignCenter terms backgroundColor={props.theme.colors.gray} >
+      <Style.SectionBox backgroundColor={props.theme.colors.gray} large >
+        <Style.SectionBox backgroundColor={'#fff'}  rounded>
+          <Style.SectionBox alignCenter terms  roundedTop>
             <Style.SectionBox alignCenter >
               <Style.Title size={'1.5em'} >Privacy Policy For Website</Style.Title>
               <Style.Paragraph>
@@ -32,8 +32,8 @@ const Home = (props) => {
             </Style.SectionBox>
           </Style.SectionBox>
 
-          <Style.Block flex direction={'column'}>
-            <Style.Title size={'1.2em'} >Article 1 - DEFINITIONS:</Style.Title>
+          <Style.Block flex direction={'column'} rounded >
+            <Style.Title size={'1.2em'} roundedTop>Article 1 - DEFINITIONS:</Style.Title>
             <Style.Paragraph>
               a) APPLICABLE WEBSITE: This Privacy Policy will refer to and be applicable to the
               Website listed above, which shall hereinafter be referred to as "Website." Any listed
