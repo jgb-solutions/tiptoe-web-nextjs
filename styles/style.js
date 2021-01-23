@@ -17,7 +17,10 @@ const SectionBox = styled.div`
   flex-direction: column;
   ${props => props.alignCenter && `align-items: center; justify-content: center;`};
   ${props => props.marginTop && `margin-top: ${props.marginTop}`};
+  ${props => props.marginBottom && `margin-bottom: ${props.marginBottom}`};
   ${props => props.borderTop && `border-top: 1px solid ${props.borderTop}`};
+  ${props => props.rounded && `border-radius: 15px`};
+  ${props => props.roundedTop && `border-radius: 15px 15px 0px 0px`};
   padding-bottom:10px;
   background-color: ${props => props.backgroundColor};
   ${props => props.headerBox && `
@@ -63,6 +66,7 @@ const PrimaryButton = styled.button`
   align-items: center; 
   cursor:pointer;
   color: #fff;
+  text-transform:uppercase;
   :hover{
     border: 2px solid ${props => props.theme.colors.nightshadz};
     background-color: #fff;
@@ -92,6 +96,7 @@ background-color: #fff;
   justify-content: center;
   align-items: center; 
   cursor:pointer;
+  text-transform:uppercase;
   color: ${props => props.theme.colors.tundora};
   :hover{
     border: 2px solid #fff;
@@ -121,6 +126,14 @@ const Paragraph = styled.p`
 const Logo = styled.img`
   width: 150px;
   height:50px;
+  ${props => props.backgroundColor && `
+    background-color:${props.backgroundColor};
+    width: 200px;
+    height:70px;
+    padding:10px;
+    border-radius:10px;
+
+  `}
   @media (max-width: 1100px) {
     width: 250px;
     height:100px;
@@ -165,6 +178,7 @@ const TopImage = styled.img`
 const Poster = styled.img`
   width: 100%;
   border-radius:10px;
+  border:1px solid rgba(171,57,84, 0.2);
 `;
 
 
