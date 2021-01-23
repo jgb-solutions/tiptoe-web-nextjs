@@ -21,7 +21,7 @@ const Header = (props) => {
 
 
         <Style.Block flex direction={'column'} alignItems={'center'}>
-          <Style.Logo src="/images/logo.png" />
+          <Style.Logo src="/images/logo.png" backgroundColor={'rgba(255,255,255,0.2)'} />
           <Style.Title color={'#fff'} textAlign={'center'} >Welcome to TipToe</Style.Title>
           <Style.Paragraph marginTop={'-10px'} color={'#fff'}>The slogan goes here</Style.Paragraph>
 
