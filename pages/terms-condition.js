@@ -110,7 +110,7 @@ const Home = (props) => {
               The Data Controller may be contacted as follows:
             </Style.Paragraph>
 
-            <Style.Paragraph marginTop={'-20px'}>
+            <Style.SectionBox marginTop={'-20px'}>
               <Style.UlList>
                 <Style.LiList>
                   Andre G. Holdings
@@ -122,7 +122,7 @@ const Home = (props) => {
                   Roselle, NJ 07203
                 </Style.LiList>
               </Style.UlList>
-            </Style.Paragraph>
+            </Style.SectionBox>
 
             <Style.Paragraph>
               The Data Controller and operator of the Website are one and the same.
@@ -133,7 +133,7 @@ const Home = (props) => {
               may be contacted as follows:
             </Style.Paragraph>
 
-            <Style.Paragraph marginTop={'-20px'}>
+            <Style.SectionBox marginTop={'-20px'}>
               <Style.UlList>
                 <Style.LiList>
                   Example: Gregory10gaudin@gmail.com
@@ -145,7 +145,7 @@ const Home = (props) => {
                   Roselle NJ 07203
                 </Style.LiList>
               </Style.UlList>
-            </Style.Paragraph>
+            </Style.SectionBox>
 
             <Style.Title size={'1.2em'} >Article 4 - LOCATION:</Style.Title>
             <Style.Paragraph>
@@ -155,7 +155,7 @@ const Home = (props) => {
               take place is as follows:
             </Style.Paragraph>
 
-            <Style.Paragraph marginTop={'-20px'}>
+            <Style.SectionBox marginTop={'-20px'}>
               <Style.UlList>
                 <Style.LiList>
                   413 Wheatsheaf RD
@@ -164,7 +164,7 @@ const Home = (props) => {
                   Roselle NJ 07203
                 </Style.LiList>
               </Style.UlList>
-            </Style.Paragraph>
+            </Style.SectionBox>
 
             <Style.Title size={'1.2em'} >Article 5 - MODIFICATIONS AND REVISIONS:</Style.Title>
             <Style.Paragraph>
@@ -181,7 +181,7 @@ const Home = (props) => {
               Depending on how you use our Website, you will be subject to different types of
               Personal Data collected and different manners of collection:
             </Style.Paragraph>
-            <Style.Paragraph marginTop={'-20px'}>
+            <Style.SectionBox marginTop={'-20px'}>
               <Style.UlList>
                 <Style.LiList>
                   <Style.Paragraph>
@@ -192,19 +192,19 @@ const Home = (props) => {
                     During the process of your registration, we will collect some of the following
                     Personal Data from you through your voluntary disclosure:
                   </Style.Paragraph>
-                  <Style.Paragraph >
+                  <Style.SectionBox >
                     <Style.UlList>
                       <Style.LiList>
                         Example: Name, email. financial information for payments, google, facebook,
                         etc
                       </Style.LiList>
                     </Style.UlList>
-                  </Style.Paragraph>
+                  </Style.SectionBox>
 
                   <Style.Paragraph >
                     Personal Data may be asked for in relation to:
                   </Style.Paragraph>
-                  <Style.Paragraph >
+                  <Style.SectionBox >
                     <Style.UlList>
                       <Style.LiList>
                         I) Interaction with our representatives in any way
@@ -224,7 +224,7 @@ const Home = (props) => {
                         bulletin boards, chat rooms or other similar features
                       </Style.LiList>
                     </Style.UlList>
-                  </Style.Paragraph>
+                  </Style.SectionBox>
                   <Style.Paragraph >
                     By undergoing the registration process, you consent to us collecting your Personal
                     Data, including the Personal Data described in this clause, as well as storing, using
@@ -295,7 +295,7 @@ const Home = (props) => {
                   </Style.Paragraph>
                 </Style.LiList>
               </Style.UlList>
-            </Style.Paragraph>
+            </Style.SectionBox>
 
             <Style.Title size={'1.2em'} >Article 7 - THE PERSONAL DATA WE RECEIVE AUTOMATICALLY:</Style.Title>
             <Style.Paragraph>
@@ -325,7 +325,7 @@ const Home = (props) => {
               of cookies, but then you may not be able to use our Website as we intend. To proceed
               without changing the options related to cookies, simply continue to use our Website.
             </Style.Paragraph>
-            <Style.Paragraph marginTop={'-10px'}>
+            <Style.SectionBox marginTop={'-10px'}>
               <Style.UlList>
                 <Style.LiList>
                   <Style.Paragraph>
@@ -392,7 +392,7 @@ const Home = (props) => {
                     web browser you are using:
                   </Style.Paragraph>
 
-                  <Style.Paragraph>
+                  <Style.SectionBox>
                     <Style.UlList>
                       <Style.LiList>
                         <Style.Paragraph>
@@ -425,7 +425,7 @@ const Home = (props) => {
                       </Style.LiList>
 
                     </Style.UlList>
-                  </Style.Paragraph>
+                  </Style.SectionBox>
                 </Style.LiList>
 
                 <Style.LiList>
@@ -434,7 +434,7 @@ const Home = (props) => {
                     log files that store automatic information collected during user visits. The different
                     types of log data could be as follows:
                   </Style.Paragraph>
-                  <Style.Paragraph>
+                  <Style.SectionBox>
                     <Style.UlList>
                       <Style.LiList>
                         <Style.Paragraph>
@@ -473,10 +473,10 @@ const Home = (props) => {
                       </Style.LiList>
 
                     </Style.UlList>
-                  </Style.Paragraph>
+                  </Style.SectionBox>
                 </Style.LiList>
               </Style.UlList>
-            </Style.Paragraph>
+            </Style.SectionBox>
 
 
 
@@ -540,7 +540,7 @@ const Home = (props) => {
             <Style.Paragraph>
               Personal Data that may be considering identifying may be used for the following:
             </Style.Paragraph>
-            <Style.Paragraph marginTop={'-10px'}>
+            <Style.SectionBox marginTop={'-10px'}>
               <Style.UlList>
                 <Style.LiList>
                   <Style.Paragraph>
@@ -579,7 +579,7 @@ const Home = (props) => {
                 </Style.LiList>
 
               </Style.UlList>
-            </Style.Paragraph>
+            </Style.SectionBox>
 
             <Style.Title size={'1.2em'} >Article 10 - DISCLOSURE OF PERSONAL DATA:</Style.Title>
             <Style.Paragraph>
@@ -588,7 +588,7 @@ const Home = (props) => {
               cases, in our sole and exclusive discretion. Such cases may include, but are not limited
               to:
             </Style.Paragraph>
-            <Style.Paragraph marginTop={'-10px'}>
+            <Style.SectionBox marginTop={'-10px'}>
               <Style.UlList>
                 <Style.LiList>
                   <Style.Paragraph>
@@ -630,7 +630,7 @@ const Home = (props) => {
                   </Style.Paragraph>
                 </Style.LiList>
               </Style.UlList>
-            </Style.Paragraph>
+            </Style.SectionBox>
 
             <Style.Title size={'1.2em'} >Article 11 - PUBLIC INFORMATION:</Style.Title>
             <Style.Paragraph>
@@ -684,7 +684,7 @@ const Home = (props) => {
               follows:
             </Style.Paragraph>
 
-            <Style.Paragraph>
+            <Style.SectionBox>
               <Style.UlList>
                 <Style.LiList>
                   <Style.Paragraph>
@@ -735,7 +735,7 @@ const Home = (props) => {
                   </Style.Paragraph>
                 </Style.LiList>
               </Style.UlList>
-            </Style.Paragraph>
+            </Style.SectionBox>
 
             <Style.Paragraph>
               Such rights can all be exercised by contacting us at the relevant contact information
