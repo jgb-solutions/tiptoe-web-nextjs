@@ -16,7 +16,6 @@ const Home = (props) => {
       <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
         <Style.SectionBox marginBottom={'30px'} marginTop={'-165px'} shadow backgroundColor={'#fff'} noPadding rounded>
           <Style.SectionBox alignCenter backgroundColor={props.theme.colors.gray} height={'65px'} roundedTop>
-            <Style.Title size={'1.5em'} >A title goes here!</Style.Title>
           </Style.SectionBox>
 
           <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>

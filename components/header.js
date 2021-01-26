@@ -33,7 +33,7 @@ const Header = (props) => {
         </Style.Block>
 
         <Style.Block flex direction={'column'} alignItems={'center'}>
-          <Style.TopImage src="/images/pic1.png" />
+          <Style.TopImage src="/images/pic2.png" />
         </Style.Block>
       </Style.Block>
     </Style.SectionBox>
