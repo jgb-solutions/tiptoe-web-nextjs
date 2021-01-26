@@ -21,7 +21,7 @@ const Header = (props) => {
 
 
         <Style.Block flex direction={'column'} alignItems={'center'}>
-          <Style.Logo src="/images/logo.png" backgroundColor={'rgba(255,255,255,0.2)'} />
+          <Style.Logo src="/images/logo.png" />
           <Style.Title color={'#fff'} textAlign={'center'} >Welcome to TipToe</Style.Title>
           <Style.Paragraph marginTop={'-10px'} color={'#fff'}>The slogan goes here</Style.Paragraph>
 
@@ -33,7 +33,7 @@ const Header = (props) => {
         </Style.Block>
 
         <Style.Block flex direction={'column'} alignItems={'center'}>
-          <Style.TopImage src="/images/pic2.png" />
+          <Style.TopImage src="/images/pic1.png" />
         </Style.Block>
       </Style.Block>
     </Style.SectionBox>
