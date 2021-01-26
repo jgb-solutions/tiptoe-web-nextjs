@@ -166,7 +166,7 @@ const Block = styled.div`
 `;
 
 const TopImage = styled.img`
-  width: 400px;
+  width: 300px;
   @media (max-width: 1100px) {
     width:100%;
     margin-bottom:-100px;
