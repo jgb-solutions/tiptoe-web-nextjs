@@ -24,8 +24,8 @@ const SectionBox = styled.div`
   padding-bottom:10px;
   background-color: ${props => props.backgroundColor};
   ${props => props.headerBox && `
-    background-color: ${props.theme.colors.shipCove}; /* For browsers that do not support gradients */
-    background-image: linear-gradient(to right, ${props.theme.colors.black} 20% , ${props.theme.colors.nightshadz});
+    background-color: ${props.theme.colors.shipCove}; 
+    background-image: linear-gradient(to right, #70001b 10% , ${props.theme.colors.nightshadz});
     height: 50vh;
     padding-bottom:6rem; 
   `};

@@ -37,7 +37,7 @@ const Footer = (props) => {
       <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
         <Style.Block flex direction={'column'} alignItems={'left'} justifyContent={'flex-start'}>
           <Link href='/'>
-            <Style.Logo src="/images/logo.png" />
+            <Style.Logo src="/images/logo.png" backgroundColor={'rgba(255,255,255,0.1)'} />
           </Link>
         </Style.Block>
 
