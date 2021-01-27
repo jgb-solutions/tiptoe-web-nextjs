@@ -1,4 +1,5 @@
-import '../styles/globals.css'
+import '../styles/globals.css';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 import { ThemeProvider } from "styled-components";
 import theme from '../utils/theme';
 
