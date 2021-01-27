@@ -19,19 +19,21 @@ const SectionBox = styled.div`
   ${props => props.marginTop && `margin-top: ${props.marginTop}`};
   ${props => props.marginBottom && `margin-bottom: ${props.marginBottom}`};
   ${props => props.borderTop && `border-top: 1px solid ${props.borderTop}`};
+  ${props => props.borderBottom && `border-bottom: 1px solid ${props.borderBottom}`};
   ${props => props.rounded && `border-radius: 15px`};
   ${props => props.roundedTop && `border-radius: 15px 15px 0px 0px`};
   padding-bottom:10px;
   background-color: ${props => props.backgroundColor};
-  ${props => props.headerBox && `
+  ${props => (props.headerBox || props.downloadBox || props.termsCondition) && `
     background-color: ${props.theme.colors.shipCove}; 
     background-image: linear-gradient(to right, #70001b 10% , ${props.theme.colors.nightshadz});
+  `};
+
+  ${props => props.headerBox && `
     height: 50vh;
     padding-bottom:6rem; 
   `};
   ${props => props.downloadBox && `
-    background-color: ${props.theme.colors.shipCove}; 
-    background-image: linear-gradient(to right, #70001b 10% , ${props.theme.colors.nightshadz});
     height: 50vh;
   `};
   ${props => props.terms && `
@@ -45,6 +47,7 @@ const SectionBox = styled.div`
   `};
 
   @media (max-width: 1100px) {
+    height: 100%;
     margin-top: -40px;
     padding-top: 40px;
     padding-left:10px;
@@ -54,6 +57,12 @@ const SectionBox = styled.div`
       padding:0px;
     `}
   } 
+  ${props => props.headerBox && `
+    background-color: ${props.theme.colors.shipCove}; 
+    background-image: linear-gradient(to right, #70001b 10% , ${props.theme.colors.nightshadz});
+    height: 50vh;
+    padding-bottom:6rem; 
+  `};
 
 `;
 
@@ -190,6 +199,9 @@ const Poster = styled.img`
 
 const DImage = styled.img`
   width: 80%;
+  @media (max-width: 1100px) {
+    width:100%;
+  } 
   height: 50vh;
 `;
 

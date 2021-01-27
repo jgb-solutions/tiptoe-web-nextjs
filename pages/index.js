@@ -21,7 +21,7 @@ const Home = (props) => {
   return (
     <Style.Container>
       <Header title="| Home" />
-      <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
+      <Style.SectionBox backgroundColor={props.theme.colors.gray}  large>
         <Style.SectionBox marginBottom={'30px'} marginTop={'-165px'} shadow backgroundColor={'#fff'} noPadding rounded>
 
           <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
@@ -150,7 +150,7 @@ const Home = (props) => {
             naturalSlideHeight={125}
             totalSlides={3}
             isPlaying={true}
-            interval={4000}
+            interval={6000}
             infinite={true}
             style={{ width: '100%', flexDirection: 'row' }}
           >
