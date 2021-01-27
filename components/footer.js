@@ -12,13 +12,13 @@ const Footer = (props) => {
   return <>
     <Style.SectionBox style={{ marginBottom: isTabletOrMobileDevice && '30px' }} backgroundColor={theme?.colors.nightshadz} downloadBox noPadding id="download">
       <Style.Block flex direction={'row'} noPadding justifyContent={'space-between'}>
-        <Style.Block large width={'40%'} flex direction={'column'} alignItems={'center'} justifyContent={'center'}>
+        <Style.Block large withPadding width={'40%'} flex direction={'column'} alignItems={'center'} justifyContent={'center'}>
           <Style.Block >
-            <Style.Block flex direction={'column'}>
+            <Style.Block flex direction={'column'} justifyContent={isTabletOrMobileDevice ? 'center' : 'flex-start'}>
               <Style.Title size={'1.5em'} color={'#fff'}>Get the app!</Style.Title>
               <Style.Paragraph color={'#fff'} marginTop={'0px'}>
                 Join thousands of loyal users using the TipToe mobile app
-            </Style.Paragraph>
+              </Style.Paragraph>
             </Style.Block>
             <Style.Block flex direction={'row'} noPadding justifyContent={''}>
               <Style.AppImage src="/images/app.png" marginRignt />
