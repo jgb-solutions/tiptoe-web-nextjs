@@ -29,6 +29,11 @@ const SectionBox = styled.div`
     height: 50vh;
     padding-bottom:6rem; 
   `};
+  ${props => props.downloadBox && `
+    background-color: ${props.theme.colors.shipCove}; 
+    background-image: linear-gradient(to right, #70001b 10% , ${props.theme.colors.nightshadz});
+    height: 50vh;
+  `};
   ${props => props.terms && `
     flex-direction: row;
     justify-content:space-between;
@@ -46,8 +51,7 @@ const SectionBox = styled.div`
     padding-right:10px;
     padding-bottom:50px;
     ${props => props.noPadding && `
-      padding-left:0px;
-      padding-right:0px;
+      padding:0px;
     `}
   } 
 
@@ -98,6 +102,7 @@ background-color: #fff;
   cursor:pointer;
   text-transform:uppercase;
   color: ${props => props.theme.colors.tundora};
+  ${props => props.hidden && `display: none;`}
   :hover{
     border: 2px solid #fff;
     background-color: ${props => props.theme.colors.nightshadz};
@@ -141,6 +146,7 @@ const Logo = styled.img`
 `;
 
 const Block = styled.div`
+  ${props => props.marginLeftMobile && `margin-left: ${props.marginLeftMobile}`}
   padding:${props => props.noPadding ? `0px` : `10px`};
   ${props => props.flex && `display:flex;`};
   ${props => props.width && `width:${props.width}`};
@@ -155,6 +161,7 @@ const Block = styled.div`
     align-items:center;
     margin-top:10px;
     width:100%;
+    margin-left: 0px;
     ${props => props.model && `
       flex-direction: row;
       flex-wrap: wap;
@@ -181,14 +188,22 @@ const Poster = styled.img`
   border:1px solid rgba(171,57,84, 0.2);
 `;
 
+const DImage = styled.img`
+  width: 80%;
+  height: 50vh;
+`;
+
 
 const AppImage = styled.img`
-  width: 350px;
-  height:120px;
+  width: 180px;
+  height:70px;
   border-radius:10px;
   cursor:pointer;
+  margin-top:20px;
+  ${props => props.marginRignt && `margin-right:20px;`}
   @media (max-width: 1100px) {
-    width:80%;
+    margin-right:0px;
+    width:50%;
   } 
 `;
 
@@ -224,6 +239,7 @@ const Style = {
   Logo,
   Block,
   Poster,
+  DImage,
   Title,
   Paragraph,
   PrimaryButton,

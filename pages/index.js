@@ -1,22 +1,28 @@
 import Header from '../components/header';
 import Style from '../styles/style';
 import Footer from '../components/footer';
+import { useState } from 'react';
+import { useMediaQuery } from 'react-responsive'
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
 
 import Whirligig from 'react-whirligig'
 
 
 const Home = (props) => {
+  const [hiddenButton, setHiddenButton] = useState(true)
   let whirligig
   const next = () => whirligig.next()
   const prev = () => whirligig.prev()
+
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 1100px)",
+  });
 
   return (
     <Style.Container>
       <Header title="| Home" />
       <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
         <Style.SectionBox marginBottom={'30px'} marginTop={'-165px'} shadow backgroundColor={'#fff'} noPadding rounded>
-          {/* <Style.SectionBox alignCenter backgroundColor={props.theme.colors.gray} height={'65px'} roundedTop>
-          </Style.SectionBox> */}
 
           <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
             <Style.Block flex direction={'column'} alignItems={'center'}>
@@ -133,41 +139,72 @@ const Home = (props) => {
         </Style.Block>
       </Style.SectionBox>
 
-      <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
+      <Style.SectionBox backgroundColor={props.theme.colors.gray} >
         <Style.SectionBox alignCenter backgroundColor={props.theme.colors.gray} height={'65px'}>
           <Style.Title size={'1.5em'} >Some of our models</Style.Title>
         </Style.SectionBox>
 
-        <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'} model>
-          <Style.SecondaryButton onClick={prev}>Prev</Style.SecondaryButton>
-          <Whirligig
-            visibleSlides={5}
-            animationDuration={500}
-            className='slide'
-            // gutter="1em"
-            ref={(_whirligigInstance) => { whirligig = _whirligigInstance }}
+        <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'center'} model onMouseEnter={() => setHiddenButton(false)} onMouseLeave={() => setHiddenButton(true)}>
+          <CarouselProvider
+            naturalSlideWidth={100}
+            naturalSlideHeight={125}
+            totalSlides={3}
+            isPlaying={true}
+            interval={4000}
+            infinite={true}
+            style={{ width: '100%', flexDirection: 'row' }}
           >
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-1.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-2.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-3.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-4.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-5.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-6.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-7.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-8.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-9.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-10.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-11.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-12.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-13.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-14.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-15.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-16.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-17.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-18.png" />
-            <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-19.png" />
-          </Whirligig>
-          <Style.SecondaryButton onClick={next}>Next</Style.SecondaryButton>
+            <Slider style={{ height: '130px' }}>
+              <Slide index={0} style={{ display: 'flex', flexDirection: 'space-between' }}>
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-1.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-2.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-3.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-4.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-5.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-6.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-7.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-8.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-9.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-10.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-11.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-12.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-13.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-14.png" />
+              </Slide>
+              <Slide index={1} style={{ display: 'flex', flexDirection: 'space-between' }}>
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-15.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-16.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-17.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-18.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-19.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-20.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-21.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-22.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-23.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-24.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-25.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-26.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-27.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-28.png" />
+              </Slide>
+              <Slide index={2} style={{ display: 'flex', flexDirection: 'space-between' }}>
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-29.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-30.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-31.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-32.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-33.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-34.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-35.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-36.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-37.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-38.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-39.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-40.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-41.png" />
+                <Style.Models src="https://img-storage-dev.tiptoe.app/models/image-42.png" />
+              </Slide>
+            </Slider>
+          </CarouselProvider>
 
         </Style.Block>
       </Style.SectionBox>
