@@ -10,7 +10,7 @@ const Container = styled.div`
 
 const SectionBox = styled.div`
   width:100%;
-  height:${props => props.height ? props.height : ``};;
+  height:${props => props.height ? props.height : ``};
   padding: ${props => props.large ? `3rem 20%` : ``};
   flex: ${props => props.large ? `1` : ``};
   display: flex;
@@ -52,7 +52,7 @@ const SectionBox = styled.div`
     padding-top: 40px;
     padding-left:10px;
     padding-right:10px;
-    padding-bottom:50px;
+    padding-bottom:120px;
     ${props => props.noPadding && `
       padding:0px;
     `}
@@ -164,7 +164,10 @@ const Block = styled.div`
   ${props => props.alignItems && `align-items:${props.alignItems}`};
   ${props => props.marginButtom && `margin-bottom: 10px`};
 
+  padding: ${props => props.large ? `0px  0px 0px  25% ` : ``};
+
   @media (max-width: 1100px) {
+    padding: 0px;
     flex-direction:column;
     justify-content:center;
     align-items:center;
