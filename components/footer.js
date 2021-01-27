@@ -12,16 +12,18 @@ const Footer = (props) => {
   return <>
     <Style.SectionBox style={{ marginBottom: isTabletOrMobileDevice && '30px' }} backgroundColor={theme?.colors.nightshadz} downloadBox noPadding id="download">
       <Style.Block flex direction={'row'} noPadding justifyContent={'space-between'}>
-        <Style.Block width={'50%'} flex direction={'column'} justifyContent={'center'}
-          style={{ marginLeft: !isTabletOrMobileDevice && '150px' }}>
-          <Style.Title size={'1.5em'} color={'#fff'}>Get the app!</Style.Title>
-          <Style.Paragraph color={'#fff'} marginTop={'0px'}>
-            Join milions of loyal users using the TipToe mobile app
-          </Style.Paragraph>
-          <Style.Block flex direction={'row'} noPadding justifyContent={''}>
-            <Style.AppImage src="/images/app.png" marginRignt />
-            <Style.AppImage src="/images/play.png" />
+        <Style.Block width={'50%'} flex direction={'column'} alignItems={'center'} justifyContent={'center'}>
+          <Style.Block>
+            <Style.Title size={'1.5em'} color={'#fff'}>Get the app!</Style.Title>
+            <Style.Paragraph color={'#fff'} marginTop={'0px'}>
+              Join milions of loyal users using the TipToe mobile app
+            </Style.Paragraph>
+            <Style.Block flex direction={'row'} noPadding justifyContent={''}>
+              <Style.AppImage src="/images/app.png" marginRignt />
+              <Style.AppImage src="/images/play.png" />
+            </Style.Block>
           </Style.Block>
+
         </Style.Block>
 
         <Style.Block width={'50%'} flex direction={'row-reverse'} noPadding>
@@ -30,7 +32,7 @@ const Footer = (props) => {
 
       </Style.Block>
     </Style.SectionBox>
-    
+
     <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
       <Style.Block flex direction={'column'} alignItems={''} justifyContent={'center'}>
         <Style.Title size={'1.2em'} color={``}>Join Tiptoe Newsletter</Style.Title>

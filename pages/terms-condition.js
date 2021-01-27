@@ -16,7 +16,7 @@ const Home = (props) => {
         <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
         <link rel="manifest" href="/icons/site.webmanifest" />
       </Head>
-      <Style.SectionBox backgroundColor={props.theme.colors.gray} large >
+      <Style.SectionBox borderBottom={'#fff'} termsCondition large >
         <Style.SectionBox backgroundColor={'#fff'}  rounded>
           <Style.SectionBox alignCenter terms  roundedTop>
             <Style.SectionBox alignCenter >
