@@ -167,7 +167,7 @@ const Block = styled.div`
   padding: ${props => props.large ? `0px  0px 0px  25% ` : ``};
 
   @media (max-width: 1100px) {
-    padding: 0px;
+    padding: 10px;
     flex-direction:column;
     justify-content:center;
     align-items:center;
