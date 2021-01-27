@@ -22,7 +22,7 @@ const Home = (props) => {
     <Style.Container>
       <Header title="| Home" />
       <Style.SectionBox backgroundColor={props.theme.colors.gray}  large>
-        <Style.SectionBox marginBottom={'30px'} marginTop={'-165px'} shadow backgroundColor={'#fff'} noPadding rounded>
+        <Style.SectionBox marginBottom={'30px'} marginTop={isTabletOrMobileDevice ? '-10px' : '-165px'} shadow backgroundColor={'#fff'} noPadding rounded>
 
           <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
             <Style.Block flex direction={'column'} alignItems={'center'}>
