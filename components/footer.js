@@ -1,39 +1,47 @@
 import Style from '../styles/style';
 import Link from 'next/link'
+import { useMediaQuery } from 'react-responsive'
 
 const Footer = (props) => {
   const { theme } = props;
 
-  console.log(props)
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 1100px)",
+  });
 
   return <>
-    <Style.SectionBox backgroundColor={theme?.colors.nightshadz} large id="download">
-      <Style.SectionBox alignCenter height={'65px'}>
-        <Style.Title size={'1.5em'} color={`#fff`}>Download the app</Style.Title>
-      </Style.SectionBox>
-
-      <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
-        <Style.Block flex direction={'column'} alignItems={'center'}>
-          <Link href='/'>
-            <Style.AppImage src="/images/app.png" />
-          </Link>
+    <Style.SectionBox style={{ marginBottom: isTabletOrMobileDevice && '30px' }} backgroundColor={theme?.colors.nightshadz} downloadBox noPadding id="download">
+      <Style.Block flex direction={'row'} noPadding justifyContent={'space-between'}>
+        <Style.Block width={'50%'} flex direction={'column'} justifyContent={'center'}
+          style={{ marginLeft: !isTabletOrMobileDevice && '150px' }}>
+          <Style.Title size={'1.5em'} color={'#fff'}>Get the app!</Style.Title>
+          <Style.Paragraph color={'#fff'} marginTop={'0px'}>
+            Join milions of loyal users using the TipToe mobile app
+          </Style.Paragraph>
+          <Style.Block flex direction={'row'} noPadding justifyContent={''}>
+            <Style.AppImage src="/images/app.png" marginRignt />
+            <Style.AppImage src="/images/play.png" />
+          </Style.Block>
         </Style.Block>
 
-        <Style.Block flex direction={'column'} alignItems={'center'}>
-          <Link href='/'>
-            <Style.AppImage src="/images/play.png" />
-          </Link>
+        <Style.Block width={'50%'} flex direction={'row-reverse'} noPadding>
+          <Style.DImage src="/images/dImage.jpg" />
         </Style.Block>
 
       </Style.Block>
     </Style.SectionBox>
-    <Style.SectionBox borderTop={`#fff`} backgroundColor={'#010101'} large>
-
-      <Style.Block flex direction={'column'} alignItems={'center'} justifyContent={'center'}>
-        <Style.Title size={'1.2em'} color={`#fff`}>Join Tiptoe Newsletter</Style.Title>
-        <Style.Input placeholder="Your email here" />
+    
+    <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
+      <Style.Block flex direction={'column'} alignItems={''} justifyContent={'center'}>
+        <Style.Title size={'1.2em'} color={``}>Join Tiptoe Newsletter</Style.Title>
+        <Style.Paragraph marginTop={'0px'}>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra... </Style.Paragraph>
+        <Style.Block noPadding flex direction={isTabletOrMobileDevice ? 'column' : 'row'} justifyContent={isTabletOrMobileDevice ? 'center' : 'space-around'}>
+          <Style.Input placeholder="Your email here" style={{ width: '70%' }} />
+          <Style.SecondaryButton style={{ width: '29%', marginTop: isTabletOrMobileDevice && '30px' }}>Send</Style.SecondaryButton>
+        </Style.Block>
       </Style.Block>
-
+    </Style.SectionBox>
+    <Style.SectionBox backgroundColor={'#010101'} large>
       <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
         <Style.Block flex direction={'column'} alignItems={'left'} justifyContent={'flex-start'}>
           <Link href='/'>
