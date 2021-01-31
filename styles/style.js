@@ -56,6 +56,9 @@ const SectionBox = styled.div`
     ${props => props.noPadding && `
       padding:0px;
     `}
+    ${props => props.termsCondition && `
+      padding-top:100px;
+    `}
   } 
   ${props => props.headerBox && `
     background-color: ${props.theme.colors.shipCove}; 
@@ -124,6 +127,7 @@ background-color: #fff;
 
 
 const Paragraph = styled.p`
+  text-align:justify;
   ${props => props.marginTop && `margin-top:${props.marginTop}`};
   ${props => props.color && `color:${props.color}`};
   ${props => props.pointer && `cursor:pointer`};
@@ -156,7 +160,7 @@ const Logo = styled.img`
 
 const Block = styled.div`
   ${props => props.marginLeftMobile && `margin-left: ${props.marginLeftMobile}`}
-  padding:${props => props.noPadding ? `0px` : `10px`};
+  padding:${props => props.noPadding ? `0px` : props => props.large ? `0px  0px 0px  25% ` : `10px`};
   ${props => props.flex && `display:flex;`};
   ${props => props.width && `width:${props.width}`};
   ${props => props.direction && `flex-direction:${props.direction}`};
@@ -164,7 +168,7 @@ const Block = styled.div`
   ${props => props.alignItems && `align-items:${props.alignItems}`};
   ${props => props.marginButtom && `margin-bottom: 10px`};
 
-  padding: ${props => props.large ? `0px  0px 0px  25% ` : ``};
+  padding: ;
 
   @media (max-width: 1100px) {
     padding: ${props =>props.withPadding ? '4px' : ''};
@@ -183,6 +187,8 @@ const Block = styled.div`
     box-shadow: 0px 4px 4px #ddd;
   `};  
 `;
+
+const UlBox = styled.div``;
 
 const TopImage = styled.img`
   width: 300px;
@@ -238,19 +244,29 @@ const Input = styled.input`
 `;
 
 
-const UlList = styled.ul`
+const UlList = styled.div`
   list-style:none;
+  padding:10px;
+  width:80%;
+  @media (max-width: 1100px) {
+    padding-left: 20px;
+  } 
 `;
 
 const Bolt = styled.b`
 `;
 
-const LiList = styled.li``;
+const LiList = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction:row;
+`;
 
 
 const Style = {
   Container,
   SectionBox,
+  UlBox,
   Logo,
   Block,
   Poster,
