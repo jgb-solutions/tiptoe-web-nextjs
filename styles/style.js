@@ -52,9 +52,12 @@ const SectionBox = styled.div`
     padding-top: 40px;
     padding-left:10px;
     padding-right:10px;
-    padding-bottom:120px;
+    padding-bottom: ${props => props.noMarginbottom ? '0px' : '120px;'}
     ${props => props.noPadding && `
       padding:0px;
+    `}
+    ${props => props.termsCondition && `
+      padding-top:100px;
     `}
   } 
   ${props => props.headerBox && `
@@ -124,6 +127,13 @@ background-color: #fff;
 
 
 const Paragraph = styled.p`
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  // width:100px;
+  @media (max-width: 1100px) {
+    ${props => props.maxWidth && `widht:${props.maxWidth}`};
+  }
+  ${props => props.textAlign && `text-align:${props.textAlign}`};
   ${props => props.marginTop && `margin-top:${props.marginTop}`};
   ${props => props.color && `color:${props.color}`};
   ${props => props.pointer && `cursor:pointer`};
@@ -135,6 +145,25 @@ const Paragraph = styled.p`
     justify-content: ${props.justifyContent};
   `};
   font-family: ${props => props.theme.font.regular};
+`;
+
+const UlList = styled.div`
+  list-style:none;
+  // padding:10px;
+  width:80%;
+  @media (max-width: 1100px) {
+    padding-left: 0px;
+  } 
+`;
+const LiList = styled.div`
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-direction:row;
+`;
+
+
+const UlBox = styled.div`
+  padding-left:10px;
 `;
 
 const Logo = styled.img`
@@ -156,7 +185,7 @@ const Logo = styled.img`
 
 const Block = styled.div`
   ${props => props.marginLeftMobile && `margin-left: ${props.marginLeftMobile}`}
-  padding:${props => props.noPadding ? `0px` : `10px`};
+  padding:${props => props.noPadding ? `0px` : props => props.large ? `0px  0px 0px  25% ` : `10px`};
   ${props => props.flex && `display:flex;`};
   ${props => props.width && `width:${props.width}`};
   ${props => props.direction && `flex-direction:${props.direction}`};
@@ -164,7 +193,7 @@ const Block = styled.div`
   ${props => props.alignItems && `align-items:${props.alignItems}`};
   ${props => props.marginButtom && `margin-bottom: 10px`};
 
-  padding: ${props => props.large ? `0px  0px 0px  25% ` : ``};
+  padding: ;
 
   @media (max-width: 1100px) {
     padding: ${props =>props.withPadding ? '4px' : ''};
@@ -238,19 +267,17 @@ const Input = styled.input`
 `;
 
 
-const UlList = styled.ul`
-  list-style:none;
-`;
+
 
 const Bolt = styled.b`
 `;
 
-const LiList = styled.li``;
 
 
 const Style = {
   Container,
   SectionBox,
+  UlBox,
   Logo,
   Block,
   Poster,
