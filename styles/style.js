@@ -52,7 +52,7 @@ const SectionBox = styled.div`
     padding-top: 40px;
     padding-left:10px;
     padding-right:10px;
-    padding-bottom:120px;
+    padding-bottom: ${props => props.noMarginbottom ? '0px' : '120px;'}
     ${props => props.noPadding && `
       padding:0px;
     `}
@@ -127,7 +127,13 @@ background-color: #fff;
 
 
 const Paragraph = styled.p`
-  text-align:justify;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  // width:100px;
+  @media (max-width: 1100px) {
+    ${props => props.maxWidth && `widht:${props.maxWidth}`};
+  }
+  ${props => props.textAlign && `text-align:${props.textAlign}`};
   ${props => props.marginTop && `margin-top:${props.marginTop}`};
   ${props => props.color && `color:${props.color}`};
   ${props => props.pointer && `cursor:pointer`};
@@ -139,6 +145,25 @@ const Paragraph = styled.p`
     justify-content: ${props.justifyContent};
   `};
   font-family: ${props => props.theme.font.regular};
+`;
+
+const UlList = styled.div`
+  list-style:none;
+  // padding:10px;
+  width:80%;
+  @media (max-width: 1100px) {
+    padding-left: 0px;
+  } 
+`;
+const LiList = styled.div`
+  // display: flex;
+  // flex-wrap: wrap;
+  // flex-direction:row;
+`;
+
+
+const UlBox = styled.div`
+  padding-left:10px;
 `;
 
 const Logo = styled.img`
@@ -187,8 +212,6 @@ const Block = styled.div`
     box-shadow: 0px 4px 4px #ddd;
   `};  
 `;
-
-const UlBox = styled.div``;
 
 const TopImage = styled.img`
   width: 300px;
@@ -244,23 +267,11 @@ const Input = styled.input`
 `;
 
 
-const UlList = styled.div`
-  list-style:none;
-  padding:10px;
-  width:80%;
-  @media (max-width: 1100px) {
-    padding-left: 20px;
-  } 
-`;
+
 
 const Bolt = styled.b`
 `;
 
-const LiList = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction:row;
-`;
 
 
 const Style = {
