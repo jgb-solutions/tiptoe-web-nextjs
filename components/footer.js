@@ -65,7 +65,7 @@ const Footer = (props) => {
 
       <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'center'}>
         <Style.Paragraph color={`#fff`} pointer>
-          © Andre G. Holdings LLC 2020
+          © Andre G. Holdings LLC { new Date().getFullYear() }
         </Style.Paragraph>
       </Style.Block>
 
