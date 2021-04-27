@@ -1,5 +1,7 @@
-import { useState } from "react"
-import axios from "axios"
+import { useState } from "react";
+import axios from "axios";
+import { useMediaQuery } from 'react-responsive';
+import Style from "../styles/style";
 
 const Newsletter =  () => {
   const [email, setEmail] = useState("");
@@ -18,23 +20,28 @@ const Newsletter =  () => {
     }
   }
 
+  const isTabletOrMobileDevice = useMediaQuery({
+    query: "(max-device-width: 1100px)",
+  });
+
   return (
     <div>
-      <div>
-        <input
-        
+      <div style={{ display: 'flex' }}>
+        <Style.Input
+          style={{ width: '80%', height: isTabletOrMobileDevice && '20px' }}
           type="email"
           placeholder="Enter Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        <button
+        <Style.SecondaryButton
+          style={{ width: '25%', marginTop: isTabletOrMobileDevice && '0px', padding: isTabletOrMobileDevice && '3px' }}
           type="button"
           disabled={state === "LOADING"}
           onClick={subscribe}
         >
-          {state === "LOADING" ? "Loading" : "Subscribe"}
-        </button>
+          {state === "LOADING" ? "Loading" : "Send"}
+          </Style.SecondaryButton>
       </div>
       {state === "ERROR" && <p >{errorMessage}</p>}
       {state === "SUCCESS" && <p >Welcome to our newsletter!</p>}
