@@ -26,6 +26,10 @@ const Newsletter =  () => {
 
   return (
     <>
+    <Style.SectionBox>
+      <Style.Block flex direction={'column'} alignItems={''} justifyContent={'center'}>
+        <Style.Block noPadding flex direction={isTabletOrMobileDevice ? 'column' : 'row'} justifyContent={'space-around'}>
+        
         <Style.Input 
           placeholder="Your email here" 
           type="email" 
@@ -39,8 +43,12 @@ const Newsletter =  () => {
               onClick={subscribe}
               > {state === "LOADING" ? "Loading" : "Send"}
             </Style.SecondaryButton>
-              {state === "ERROR" && <span><br></br>{errorMessage}</span>}
-              {state === "SUCCESS" && <span>{"Welcome to our newsletter!"}</span>}
+        </Style.Block>
+      </Style.Block>
+    </Style.SectionBox>
+
+            {state === "ERROR" && <Style.Paragraph >{errorMessage}</Style.Paragraph>}
+            {state === "SUCCESS" && <span >Welcome to our newsletter!</span>} 
     </>
   )
 }
