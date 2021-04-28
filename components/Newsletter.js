@@ -39,30 +39,9 @@ const Newsletter =  () => {
               onClick={subscribe}
               > {state === "LOADING" ? "Loading" : "Send"}
             </Style.SecondaryButton>
-              {state === "ERROR" && <span>{errorMessage}</span>}
+              {state === "ERROR" && <span><br></br>{errorMessage}</span>}
               {state === "SUCCESS" && <span>{"Welcome to our newsletter!"}</span>}
     </>
-    // <div>
-    //   <div style={{ display: 'flex' }}>
-    //     <Style.Input
-    //       style={{ width: '80%', height: isTabletOrMobileDevice && '20px' }}
-    //       type="email"
-    //       placeholder="Enter Email"
-    //       value={email}
-    //       onChange={(e) => setEmail(e.target.value)}
-    //     />
-    //     <Style.SecondaryButton
-    //       style={{ width: '25%', marginTop: isTabletOrMobileDevice && '0px', padding: isTabletOrMobileDevice && '3px' }}
-    //       type="button"
-    //       disabled={state === "LOADING"}
-    //       onClick={subscribe}
-    //     >
-    //       {state === "LOADING" ? "Loading" : "Send"}
-    //       </Style.SecondaryButton>
-    //   </div>
-    //   {state === "ERROR" && <p >{errorMessage}</p>}
-    //   {state === "SUCCESS" && <p >Welcome to our newsletter!</p>}
-    // </div>
   )
 }
 
