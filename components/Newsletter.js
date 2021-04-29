@@ -47,8 +47,12 @@ const Newsletter =  () => {
       </Style.Block>
     </Style.SectionBox>
 
+    <Style.SectionBox>
+      <Style.Block>
             {state === "ERROR" && <Style.Paragraph >{errorMessage}</Style.Paragraph>}
-            {state === "SUCCESS" && <span >Welcome to our newsletter!</span>} 
+            {state === "SUCCESS" && <Style.Paragraph >Welcome to our newsletter!</Style.Paragraph>} 
+      </Style.Block>
+    </Style.SectionBox>       
     </>
   )
 }
