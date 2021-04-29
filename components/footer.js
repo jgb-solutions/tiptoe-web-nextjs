@@ -40,8 +40,8 @@ const Footer = (props) => {
       <Style.Block flex direction={'column'} alignItems={''} justifyContent={'center'}>
         <Style.Title size={'1.2em'} color={``}>Join Tiptoe Newsletter</Style.Title>
         <Style.Paragraph marginTop={'0px'}>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra... </Style.Paragraph>
-        <Style.Block noPadding flex direction={isTabletOrMobileDevice ? 'column' : 'row'} justifyContent={'space-around'}>
-        <Newsletter />
+        <Style.Block noPadding  justifyContent={'space-around'}>
+        <Newsletter /> 
           {/* <form action="/api/subscribe" method="POST">
             <Style.Input placeholder="Your email here" name="email" type="email" style={{ width: '80%' }} />
             <Style.SecondaryButton style={{ width: '18%', marginTop: isTabletOrMobileDevice && '30px' }}>Send</Style.SecondaryButton>

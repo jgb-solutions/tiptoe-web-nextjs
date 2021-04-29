@@ -26,8 +26,8 @@ const Newsletter =  () => {
 
   return (
     <>
-    <Style.SectionBox>
-      <Style.Block flex direction={'column'} alignItems={''} justifyContent={'center'}>
+    <Style.SectionBox noPadding>
+      <Style.Block noPadding flex direction={'column'} alignItems={''} justifyContent={'center'}>
         <Style.Block noPadding flex direction={isTabletOrMobileDevice ? 'column' : 'row'} justifyContent={'space-around'}>
         
         <Style.Input 
@@ -48,7 +48,7 @@ const Newsletter =  () => {
     </Style.SectionBox>
 
     <Style.SectionBox>
-      <Style.Block>
+      <Style.Block flex direction={'column'} alignItems={'center'} justifyContent={'center'}>
             {state === "ERROR" && <Style.Paragraph >{errorMessage}</Style.Paragraph>}
             {state === "SUCCESS" && <Style.Paragraph >Welcome to our newsletter!</Style.Paragraph>} 
       </Style.Block>
