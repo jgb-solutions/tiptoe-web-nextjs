@@ -43,8 +43,8 @@ export default async (req, res) => {
     return res.status(201).json({ error: null });
   } catch (error) {
     console.log(error)
-    return res.status(400).json({
-      error: `Oops, something went wrong...`,
+   return res.status(400).json({
+      error: error.response.data.title,
     });
   }
 }
