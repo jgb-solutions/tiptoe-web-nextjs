@@ -5,9 +5,8 @@ function getRequestParams(email) {
   const API_KEY = process.env.MAILCHIMP_API_KEY
   const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID
 
-  const prefix = process.env.MAILCHIMP_API_KEY.split("-")[1];
+  const prefix = API_KEY.split("-")[1];
   const url = `https://${prefix}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`;
-
 
   const data = {
     email_address: email,
@@ -43,6 +42,7 @@ export default async (req, res) => {
 
     return res.status(201).json({ error: null });
   } catch (error) {
+    console.log(error)
     return res.status(400).json({
       error: `Oops, something went wrong...`,
     });

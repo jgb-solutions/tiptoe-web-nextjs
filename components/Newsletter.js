@@ -48,7 +48,7 @@ const Newsletter = () => {
       </Style.SectionBox>
 
       <Style.SectionBox>
-        <Style.Block flex direction={'column'} alignItems={'center'} justifyContent={'center'}>
+        <Style.Block >
           {state === "ERROR" && <Style.Paragraph >{errorMessage}</Style.Paragraph>}
           {state === "SUCCESS" && <Style.Paragraph >Welcome to our newsletter!</Style.Paragraph>}
         </Style.Block>
