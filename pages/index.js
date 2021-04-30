@@ -4,7 +4,6 @@ import Footer from '../components/footer';
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive'
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext } from 'pure-react-carousel';
-
 import Whirligig from 'react-whirligig'
 
 
@@ -19,6 +18,7 @@ const Home = (props) => {
   });
 
   return (
+    <>
     <Style.Container>
       <Header title="| Home" />
       <Style.SectionBox backgroundColor={props.theme.colors.gray}  large>
@@ -210,6 +210,7 @@ const Home = (props) => {
       </Style.SectionBox>
       <Footer theme={props.theme} />
     </Style.Container>
+    </>
   )
 }
 <style jsx>{`
