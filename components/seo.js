@@ -6,11 +6,7 @@ import { DOMAIN, FB_APP_ID, APP_NAME, TWITTER_HANDLE } from '../utils/constants'
 export default function SEO({ title, url, description, type, image, imageWidth, imageHeight }) {
   const titleContent = `${APP_NAME} - ${title}`
   const descriptionContent = description || `
-      ${APP_NAME} By continuing to use our Website, you acknowledge that you have had the chance to review and 
-      consider this Privacy Policy, and you acknowledge that you agree to it. This means that you also consent 
-      to the use of your information and the method of disclosure as described in this Privacy Policy. If you 
-      do not understand the Privacy Policy or do not agree to it, then you agree to immediately cease your use 
-      of our Website.
+      With the rising popularity of foot models in the adult industry, we would love to introduce you to ${APP_NAME}. Being that the entire world is now using social media to showcase their talents, ${APP_NAME} is providing a platform designed for foot models who are looking to add an additional stream of income..
   `
   const imageContent = image || `https://tiptoe.app/images/logo.png`
 
