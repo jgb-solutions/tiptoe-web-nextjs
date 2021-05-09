@@ -1,20 +1,11 @@
-import Head from 'next/head';
 import Style from '../styles/style';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
+import SEO from '../components/seo'
 
 const Header = (props) => {
   const { title } = props;
   return (<>
-    <Head>
-      <title>Tiptoe {title && title} </title>
-      <link rel="icon" href="/icons/favicon.ico" />
-
-      <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
-      <link rel="manifest" href="/icons/site.webmanifest" />
-    </Head>
-
+    <SEO title={ title } />
     <Style.SectionBox headerBox large>
 
       <Style.Block flex direction={'row-reverse'} justifyContent={'space-between'}>
