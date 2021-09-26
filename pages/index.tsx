@@ -141,7 +141,7 @@ const Homepage: NextPage = () => {
       <div src="https://img-storage-dev.tiptoe.app/models/image-41.png" />
       <div src="https://img-storage-dev.tiptoe.app/models/image-42.png" /> */}
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   )
 }
