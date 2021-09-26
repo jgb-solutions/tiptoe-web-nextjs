@@ -1,15 +1,25 @@
-import React from 'react'
 import Head from 'next/head'
+import { FC } from 'react'
 
 import { DOMAIN, FB_APP_ID, APP_NAME, TWITTER_HANDLE } from '../utils/constants'
 
-export default function SEO({ title, url, description, type, image, imageWidth, imageHeight }) {
+type Props = {
+  title?: string
+  url?: string
+  description?: string
+  type?: string
+  image?: string
+  imageWidth?: number
+  imageHeight?: number
+}
+
+const SEO: FC<Props> = ({ title, url, description, type, image, imageWidth, imageHeight }) => {
   const titleContent = `${APP_NAME} - ${title}`
   const descriptionContent = description || `
-      ${APP_NAME} By continuing to use our Website, you acknowledge that you have had the chance to review and 
-      consider this Privacy Policy, and you acknowledge that you agree to it. This means that you also consent 
-      to the use of your information and the method of disclosure as described in this Privacy Policy. If you 
-      do not understand the Privacy Policy or do not agree to it, then you agree to immediately cease your use 
+      ${APP_NAME} By continuing to use our Website, you acknowledge that you have had the chance to review and
+      consider this Privacy Policy, and you acknowledge that you agree to it. This means that you also consent
+      to the use of your information and the method of disclosure as described in this Privacy Policy. If you
+      do not understand the Privacy Policy or do not agree to it, then you agree to immediately cease your use
       of our Website.
   `
   const imageContent = image || `https://tiptoe.app/images/logo.png`
@@ -44,3 +54,5 @@ export default function SEO({ title, url, description, type, image, imageWidth, 
     </>
   )
 }
+
+export default SEO

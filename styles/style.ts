@@ -25,13 +25,13 @@ const SectionBox = styled.div`
   padding-bottom:10px;
   background-color: ${props => props.backgroundColor};
   ${props => (props.headerBox || props.downloadBox || props.termsCondition) && `
-    background-color: ${props.theme.colors.shipCove}; 
-    background-image: linear-gradient(to right, #70001b 10% , ${props.theme.colors.nightshadz});
+    background-color: ${props.theme.colors.shipCove};
+    background-image: linear-gradient(to right, #000000 10% , ${props.theme.colors.nightshadz});
   `};
 
   ${props => props.headerBox && `
     height: 50vh;
-    padding-bottom:6rem; 
+    padding-bottom:6rem;
   `};
   ${props => props.downloadBox && `
     height: 50vh;
@@ -59,12 +59,12 @@ const SectionBox = styled.div`
     ${props => props.termsCondition && `
       padding-top:100px;
     `}
-  } 
+  }
   ${props => props.headerBox && `
-    background-color: ${props.theme.colors.shipCove}; 
-    background-image: linear-gradient(to right, #70001b 10% , ${props.theme.colors.nightshadz});
+    background-color: ${props.theme.colors.shipCove};
+    background-image: linear-gradient(to right, #000000 10% , ${props.theme.colors.black});
     height: 50vh;
-    padding-bottom:6rem; 
+    padding-bottom:6rem;
   `};
 
 `;
@@ -79,18 +79,18 @@ const PrimaryButton = styled.button`
   display:flex;
   flex-direction:row;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   cursor:pointer;
   color: #fff;
   text-transform:uppercase;
   :hover{
-    border: 2px solid ${props => props.theme.colors.nightshadz};
+    border: 2px solid ${props => props.theme.colors.black};
     background-color: #fff;
     color: ${props => props.theme.colors.tundora};
   }
   @media (max-width: 1100px) {
     margin-bottom:20px;
-  } 
+  }
 `;
 
 const Models = styled.img`
@@ -110,7 +110,7 @@ background-color: #fff;
   display:flex;
   flex-direction:row;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   cursor:pointer;
   text-transform:uppercase;
   color: ${props => props.theme.colors.tundora};
@@ -122,7 +122,7 @@ background-color: #fff;
   }
   @media (max-width: 1100px) {
     margin-bottom:20px;
-  } 
+  }
 `;
 
 
@@ -153,7 +153,7 @@ const UlList = styled.div`
   width:80%;
   @media (max-width: 1100px) {
     padding-left: 0px;
-  } 
+  }
 `;
 const LiList = styled.div`
   // display: flex;
@@ -180,7 +180,7 @@ const Logo = styled.img`
   @media (max-width: 1100px) {
     width: 250px;
     height:100px;
-  }  
+  }
 `;
 
 const Block = styled.div`
@@ -207,10 +207,10 @@ const Block = styled.div`
       flex-direction: row;
       flex-wrap: wap;
     `}
-  }  
+  }
   ${props => props.shadow && `
     box-shadow: 0px 4px 4px #ddd;
-  `};  
+  `};
 `;
 
 const TopImage = styled.img`
@@ -219,7 +219,7 @@ const TopImage = styled.img`
     width:100%;
     margin-bottom:-100px;
     margin-top:0px;
-  } 
+  }
   border-radius:10px;
 `;
 
@@ -233,7 +233,7 @@ const DImage = styled.img`
   width: 80%;
   @media (max-width: 1100px) {
     width:100%;
-  } 
+  }
   height: 50vh;
 `;
 
@@ -248,7 +248,7 @@ const AppImage = styled.img`
   @media (max-width: 1100px) {
     margin-right:0px;
     width:50%;
-  } 
+  }
 `;
 
 const Title = styled.h1`
