@@ -1,16 +1,9 @@
-import '../styles/globals.css';
-import 'pure-react-carousel/dist/react-carousel.es.css';
-import { ThemeProvider } from "styled-components";
-import theme from '../utils/theme';
+import '../styles/globals.css'
 
-function MyApp(props) {
-  const { Component, pageProps } = props;
-  
-  return (
-    <ThemeProvider theme={theme}>
-      <Component {...pageProps} theme={theme} />
-    </ThemeProvider>
-  )
+import type { AppProps } from 'next/app'
+
+function TipToeApp({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />
 }
 
-export default MyApp
+export default TipToeApp

@@ -1,81 +1,75 @@
-import Style from '../styles/style';
+import Image from 'next/image'
 import Link from 'next/link'
-import { useMediaQuery } from 'react-responsive'
-import Newsletter from "./Newsletter";
 
-const Footer = (props) => {
-  const { theme } = props;
+import { Colors } from '../utils/theme'
+import Newsletter from "./Newsletter"
 
-  const isTabletOrMobileDevice = useMediaQuery({
-    query: "(max-device-width: 1100px)",
-  });
-
-  return <>
-    <Style.SectionBox style={{ marginBottom: isTabletOrMobileDevice && '30px' }} backgroundColor={theme?.colors.nightshadz} downloadBox noPadding id="download">
-      <Style.Block flex direction={'row'} noPadding justifyContent={'space-between'}>
-        <Style.Block large withPadding width={'40%'} flex direction={'column'} alignItems={'center'} justifyContent={'center'}>
-          <Style.Block >
-            <Style.Block flex direction={'column'} justifyContent={isTabletOrMobileDevice ? 'center' : 'flex-start'}>
-              <Style.Title size={'1.5em'} color={'#fff'}>Get the app!</Style.Title>
-              <Style.Paragraph color={'#fff'} marginTop={'0px'}>
+const Footer = () => (
+  <>
+    <div id="download">
+      <div>
+        <div>
+          <div >
+            <div>
+              <div>Get the app!</div>
+              <div>
                 Join thousands of loyal users using the TipToe mobile app
-              </Style.Paragraph>
-            </Style.Block>
-            <Style.Block flex direction={'row'} justifyContent={''}>
-              <Style.AppImage src="/images/app.png" marginRignt />
-              <Style.AppImage src="/images/play.png" />
-            </Style.Block>
-          </Style.Block>
+              </div>
+            </div>
+            <div>
+              <Image src="/images/app.png" />
+              <Image src="/images/play.png" />
+            </div>
+          </div>
 
-        </Style.Block>
+        </div>
 
-        <Style.Block width={'50%'} flex direction={'row-reverse'} noPadding>
-          <Style.DImage src="/images/dImage.jpg" />
-        </Style.Block>
+        <div>
+          <Image src="/images/dImage.jpg" />
+        </div>
 
-      </Style.Block>
-    </Style.SectionBox>
+      </div>
+    </div>
 
-    <Style.SectionBox backgroundColor={props.theme.colors.gray} large>
-      <Style.Block flex direction={'column'} alignItems={''} justifyContent={'center'}>
-        <Style.Title size={'1.2em'} color={``}>Join Tiptoe Newsletter</Style.Title>
-        <Style.Paragraph marginTop={'0px'}>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra... </Style.Paragraph>
-        <Style.Block noPadding  justifyContent={'space-around'}>
-        <Newsletter /> 
+    <div>
+      <div>
+        <div>Join Tiptoe Newsletter</div>
+        <div>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra... </div>
+        <div>
+          <Newsletter />
           {/* <form action="/api/subscribe" method="POST">
-            <Style.Input placeholder="Your email here" name="email" type="email" style={{ width: '80%' }} />
-            <Style.SecondaryButton style={{ width: '18%', marginTop: isTabletOrMobileDevice && '30px' }}>Send</Style.SecondaryButton>
+            <div placeholder="Your email here" name="email" type="email" style={{ width: '80%' }} />
+            <div style={{ width: '18%', marginTop: isTabletOrMobileDevice && '30px' }}>Send</div>
             </form> */}
-        </Style.Block>
-      </Style.Block>
-    </Style.SectionBox>
-    <Style.SectionBox backgroundColor={'#010101'} large>
-      <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'space-between'}>
-        <Style.Block flex direction={'column'} alignItems={'left'} justifyContent={'flex-start'}>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
           <Link href='/'>
-            <Style.Logo src="/images/logo.png" backgroundColor={'rgba(255,255,255,0.1)'} />
+            <Image src="/images/logo.png" />
           </Link>
-        </Style.Block>
+        </div>
 
-        <Style.Block flex direction={'column'} alignItems={'right'} justifyContent={'flex-end'} >
-
+        <div>
           <Link href='/terms-condition'>
-            <Style.Paragraph color={`#fff`} pointer>
+            <div color={`#fff`}>
               Terms & Condition
-            </Style.Paragraph>
+            </div>
           </Link>
-        </Style.Block>
-      </Style.Block>
+        </div>
+      </div>
 
-      <Style.Block flex direction={'row'} alignItems={'center'} justifyContent={'center'}>
-        <Style.Paragraph color={`#fff`} pointer>
-          © Andre G. Holdings LLC { new Date().getFullYear() }
-        </Style.Paragraph>
-      </Style.Block>
+      <div>
+        <div>
+          © Andre G. Holdings LLC {new Date().getFullYear()}
+        </div>
+      </div>
 
 
-    </Style.SectionBox>
+    </div>
   </>
-}
+)
 
-export default Footer;
+export default Footer

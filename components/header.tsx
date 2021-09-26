@@ -1,39 +1,39 @@
-import Style from '../styles/style'
-import AnchorLink from 'react-anchor-link-smooth-scroll'
-import SEO from '../components/seo'
 import { FC } from 'react'
+import Image from 'next/image'
+
+import SEO from '../components/seo'
+
+import mascotLady from '../public/images/lady-website.png'
+import logo from '../public/images/logo2.png'
 
 type Props = {
   title?: string
 }
 
-const Header: FC<Props> = (props) => {
-  const { title } = props
-  return (<>
+const Header: FC<Props> = ({ title }) => (
+  <>
     <SEO title={title} />
-    <Style.SectionBox headerBox large>
 
-      <Style.Block flex direction={'row-reverse'} justifyContent={'space-between'}>
+    <section className="bg-black">
+      <header className="mx-auto md:max-w-3xl md:flex md:flex-row-reverse items-center justify-between pt-24 pb-24">
+        <div className="text-white text-center mb-12">
+          <div className="">
+            <Image src={logo} height={50} width="150" />
+          </div>
+          <h2 className="text-4xl font-bold uppercase mb-2">Welcome to TipToe</h2>
+          <h4 className="text-lg mb-8 text-nightshadz italic">HOME OF THE Fxxx#@B</h4>
 
+          <a href='#download' className="p-4 border-2 font-bold uppercase text-sm border-white rounded-3xl">
+            Download the app
+          </a>
+        </div>
 
-        <Style.Block flex direction={'column'} alignItems={'center'}>
-          <Style.Logo src="/images/logo2.png" />
-          <Style.Title color={'#fff'} textAlign={'center'} >Welcome to TipToe</Style.Title>
-          <Style.Paragraph marginTop={'-10px'} color={'#fff'}>The slogan goes here</Style.Paragraph>
-
-          <AnchorLink href='#download'>
-            <Style.PrimaryButton>
-              Download the app
-            </Style.PrimaryButton>
-          </AnchorLink>
-        </Style.Block>
-
-        <Style.Block flex direction={'column'} alignItems={'center'}>
-          <Style.TopImage src="/images/lady-website.png" />
-        </Style.Block>
-      </Style.Block>
-    </Style.SectionBox>
-  </>)
-}
+        <div className="text-center">
+          <Image src={mascotLady} width={300} height={288.56} />
+        </div>
+      </header>
+    </section>
+  </>
+)
 
 export default Header

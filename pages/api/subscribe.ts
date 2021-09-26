@@ -1,5 +1,3 @@
-import axios from "axios";
-
 function getRequestParams(email) {
 	const API_KEY = process.env.MAILCHIMP_API_KEY;
 	const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID;
@@ -37,7 +35,11 @@ export default async (req, res) => {
 	try {
 		const { url, data, headers } = getRequestParams(email);
 
-		const response = await axios.post(url, data, { headers });
+		const response = await fetch(url, {
+			method: "POST",
+			headers,
+			body: JSON.stringify(data)
+		});
 
 		return res.status(201).json({ error: null });
 	} catch (error) {

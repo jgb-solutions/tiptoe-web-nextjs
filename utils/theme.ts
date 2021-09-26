@@ -1,5 +1,4 @@
-const theme = {
-  colors: {
+const Colors = {
     black: '#010101',
     antiqueBrass: '#cb9478',
     tundora: '#434343',
@@ -7,10 +6,6 @@ const theme = {
     shipCove: '#7993bc',
     nightshadz: '#ab3954',
     gray: '#F4F4F4'
-  },
-  font: {
-    regular: "Open Sans",
-  },
-};
+  }
 
-export default theme;
+export { Colors } ;
