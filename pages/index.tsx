@@ -11,18 +11,21 @@ import section2Image from '../public/images/bg7.jpg'
 import section3Image from '../public/images/bg5.jpg'
 import section1Image from '../public/images/show1.jpg'
 import section4Image from '../public/images/bg9.jpg'
+import appImage from "../public/images/app.png"
+import playImage from "../public/images/play.png"
+import downloadImage from "../public/images/dImage.jpg"
 
 const Homepage: NextPage = () => {
   return (
     <>
       <Header title="Welcome" />
 
-      <main className="max-w-3xl mx-auto">
-        <section className="bg-white p-4 -mt-24 rounded-3xl md:grid md:grid-cols-3 md:gap-x-4 shadow-md mb-8">
+      <main className="max-w-3xl mx-auto py-8">
+        {/* <section className="bg-white p-4 -mt-24 rounded-3xl md:grid md:grid-cols-3 md:gap-x-4 shadow-md mb-8">
           <Image src={screen1} />
           <Image src={screen2} />
           <Image src={screen3} />
-        </section>
+        </section> */}
 
         {/* Welcome */}
         <section className="md:grid md:grid-cols-2 md:gap-x-3 mb-8">
@@ -141,7 +144,30 @@ const Homepage: NextPage = () => {
       <div src="https://img-storage-dev.tiptoe.app/models/image-41.png" />
       <div src="https://img-storage-dev.tiptoe.app/models/image-42.png" /> */}
 
-      {/* <Footer /> */}
+      <div id="download">
+        <div className="md:grid md:grid-cols-2 bg-nightshadz text-white">
+          <div className="md:flex md:flex-col md:justify-center mx-auto max-w-sm">
+            <div className="mb-8">
+              <h5 className="uppercase font-bold mb-4">Get the app!</h5>
+              <p className="text-sm">
+                Join thousands of loyal users using the TipToe mobile app.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-x-3">
+              <Image src={appImage} />
+              <Image src={playImage} />
+            </div>
+          </div>
+
+          <div>
+            <Image src={downloadImage} layout="responsive" />
+          </div>
+
+        </div>
+      </div>
+
+      <Footer />
     </>
   )
 }

@@ -15,7 +15,7 @@ const Header: FC<Props> = ({ title }) => (
     <SEO title={title} />
 
     <section className="bg-black">
-      <header className="mx-auto md:max-w-3xl md:flex md:flex-row-reverse items-center justify-between pt-24 pb-24">
+      <header className="mx-auto md:max-w-3xl md:flex md:flex-row-reverse items-center justify-between pt-24">
         <div className="text-white text-center mb-12">
           <div className="">
             <Image src={logo} height={50} width="150" />
@@ -37,3 +37,5 @@ const Header: FC<Props> = ({ title }) => (
 )
 
 export default Header
+
+export { logo }
