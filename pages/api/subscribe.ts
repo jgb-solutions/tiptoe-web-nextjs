@@ -1,10 +1,13 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
+const mailchimp = require('@mailchimp/mailchimp_marketing');
 
-const API_KEY = process.env.MAILCHIMP_API_KEY
-const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID
+mailchimp.setConfig({
+  apiKey:  process.env.MAILCHIMP_API_KEY,
+  server: 'us2',
+});
 
 const subscribe =  async (req: NextApiRequest, res: NextApiResponse) => {
-	const { email } = req.body;
+	const { email } = JSON.parse(req.body);
 
 	if (!email) {
 		return res.status(400).json({
@@ -13,32 +16,18 @@ const subscribe =  async (req: NextApiRequest, res: NextApiResponse) => {
 	}
 
 	try {
-		const prefix = API_KEY.split("-")[1];
-		const url = `https://${prefix}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`;
-
-		const data = {
-			email_address: email,
-			status: "subscribed",
-		};
-
-		const base64ApiKey = Buffer.from(`anystring:${API_KEY}`).toString("base64");
-
-		const headers = {
-			"Content-Type": "application/json",
-			Authorization: `Basic ${base64ApiKey}`,
-		};
-
-		const response = await fetch(url, {
-			method: "POST",
-			headers,
-			body: JSON.stringify(data)
+		const mcResponse = await mailchimp.lists.addListMember(process.env.MAILCHIMP_AUDIENCE_ID, {
+				email_address: email,
+				status: "subscribed",
 		});
+
+		console.log(mcResponse);
 
 		return res.status(201).json({ error: null });
 	} catch (error) {
-		console.log(error);
-		return res.status(400).json({
-			error: error.response.data.title,
+		console.error(error);
+		return res.status(error.status).json({
+			error:  error.response,
 		});
 	}
 };

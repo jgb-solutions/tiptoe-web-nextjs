@@ -34,6 +34,7 @@ const Homepage: NextPage = () => {
 
     setError("")
 
+
     if (!email) {
       setError("Please enter your email!")
 
@@ -43,14 +44,24 @@ const Homepage: NextPage = () => {
     try {
       setIsLoading(true)
 
-      const response = await fetch("/api/subscribe", {
+      const response = await (await fetch("/api/subscribe", {
         method: "POST",
         body: JSON.stringify({ email })
-      })
+      })).json()
 
-      setIsSubscribed(true)
+      if (response.error) {
+        setIsLoading(false)
+        const messages = JSON.parse(response.error.text)
+
+        setError(messages.title)
+      } else {
+        setIsSubscribed(true)
+        setError("")
+      }
+
     } catch (e) {
-      setError(e.response.data.error)
+      console.log(e)
+      // setError(e.response.data.error)
     } finally {
       setIsLoading(false)
     }
@@ -243,32 +254,34 @@ const Homepage: NextPage = () => {
             <p className="text-lg mb-8 text-center">Stay up to date with everything TipToe.</p>
 
             <div>
-              <form className="flex" onSubmit={handleSubscription}>
-                <input
-                  className="p-3 rounded-xl text-black"
-                  placeholder="Your email here"
-                  type="email"
-                  style={{ width: '80%' }}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                // required
-                />
+              {!isSubscribed && (
+                <form className="flex" onSubmit={handleSubscription}>
+                  <input
+                    className="p-3 rounded-xl text-black"
+                    placeholder="Your email here"
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                  />
 
-                <button
-                  type="submit"
-                  className="px-4 py-3 bg-black text-white rounded-xl font-bold ml-2 hover:bg-white hover:text-black">
-                  {isLoading ? "...Loading" : "Subscribe"}
-                </button>
-              </form>
+                  <button
+                    type="submit"
+                    className="px-4 py-3 bg-black text-white rounded-xl font-bold ml-2 hover:bg-white hover:text-black">
+                    {isLoading ? "...Loading" : "Subscribe"}
+                  </button>
+                </form>
+              )}
 
-              <div>
-                <div>{error}</div>
-                {isSubscribed && (
-                  <h3 className="text-green-500 text-center text-2xl font-bold">
-                    Yay! We'll email the goodies soon.
-                  </h3>
-                )}
-              </div>
+              {!!error && (
+                <h3 className="font-bold text-2xl mt-8">Oops! Error. {error}</h3>
+              )}
+
+              {!error && isSubscribed && (
+                <h3 className="text-green-500 text-center text-2xl font-bold">
+                  Yay! We'll email the goodies soon.
+                </h3>
+              )}
             </div>
           </div>
         </div>
