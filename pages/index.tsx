@@ -244,11 +244,8 @@ const Homepage: NextPage = () => {
       </div>
 
 
-      <div className="bg-black text-white md:grid md:grid-cols-2">
-        <div>
-          <Image src={downloadImage} layout="responsive" />
-        </div>
-        <div className="flex flex-col items-center justify-center bg-yellow-800 py-8">
+      <div className="bg-black text-white md:flex md:flex-row-reverse">
+        <div className="flex flex-col items-center justify-center bg-yellow-800 py-8 flex-1">
           <div className="max-w-md">
             <h4 className="text-3xl font-bold uppercase mb-4 text-center">Join Tiptoe Newsletter</h4>
             <p className="text-lg mb-8 text-center">Stay up to date with everything TipToe.</p>
@@ -284,6 +281,10 @@ const Homepage: NextPage = () => {
               )}
             </div>
           </div>
+        </div>
+
+        <div className="flex-1">
+          <Image src={downloadImage} layout="responsive" />
         </div>
       </div>
 
