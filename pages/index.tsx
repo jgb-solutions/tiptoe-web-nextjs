@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { FormEvent, useState } from 'react'
 import Image from 'next/image'
 import { NextPage } from 'next'
 
 import Header from '../components/header'
 import Footer from '../components/footer'
 
-import screen1 from '../public/images/screen1.jpg'
-import screen2 from '../public/images/screen2.jpg'
-import screen3 from '../public/images/screen3.jpg'
+// import screen1 from '../public/images/screen1.jpg'
+// import screen2 from '../public/images/screen2.jpg'
+// import screen3 from '../public/images/screen3.jpg'
 import section2Image from '../public/images/bg7.jpg'
 import section3Image from '../public/images/bg5.jpg'
 import section1Image from '../public/images/show1.jpg'
@@ -17,19 +17,29 @@ import playImage from "../public/images/play.png"
 import downloadImage from "../public/images/dImage.jpg"
 
 const Homepage: NextPage = () => {
-  const [email, setEmail] = useState("")
-  const [state, setState] = useState("IDLE")
-  const [errorMessage, setErrorMessage] = useState(null)
+  const [email, setEmail] = useState<string>()
+  const [error, setError] = useState<string>()
+  const [isLoading, setIsLoading] = useState(false)
+  const [isSubscribed, setIsSubscribed] = useState(false)
 
-  const subscribe = async () => {
-    setState("LOADING")
-    setErrorMessage(null)
+  const handleSubscription = async (event: FormEvent) => {
+    event.preventDefault()
+
+    setError("")
+
+    if (!email) {
+      setError("Please enter your email!")
+
+      return
+    }
+
     try {
-      const response = await fetch("/api/subscribe", { method: 'post', body: JSON.stringify({ email }) })
-      setState("SUCCESS")
+      const response = await fetch("/api/subscribe", {
+        method: "POST",
+        body: JSON.stringify({ email })
+      })
     } catch (e) {
-      setErrorMessage(e.response.data.error)
-      setState("ERROR")
+      setError(e.response.data.error)
     }
   }
 
@@ -165,9 +175,9 @@ const Homepage: NextPage = () => {
         <div className="md:grid md:grid-cols-2 bg-nightshadz text-white">
           <div className="md:flex md:flex-col md:justify-center mx-auto max-w-sm">
             <div className="mb-8">
-              <h5 className="uppercase font-bold mb-4">Get the app!</h5>
-              <p className="text-sm">
-                Join thousands of loyal users using the TipToe mobile app.
+              <h5 className="uppercase text-3xl font-bold mb-4">Get the app!</h5>
+              <p className="text-lg">
+                Join thousands of loyal users using <br /> the TipToe mobile app.
               </p>
             </div>
 
@@ -180,49 +190,47 @@ const Homepage: NextPage = () => {
           <div>
             <Image src={downloadImage} layout="responsive" />
           </div>
-
         </div>
       </div>
 
 
-      <div>
+      <div className="bg-black text-white md:grid md:grid-cols-2">
         <div>
-          <div>Join Tiptoe Newsletter</div>
-          <div>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra... </div>
-          <div>
+          <Image src={downloadImage} layout="responsive" />
+        </div>
+        <div className="flex flex-col items-center justify-center bg-yellow-800">
+          <div className="max-w-md">
+            <h4 className="text-3xl font-bold uppercase mb-4 text-center">Join Tiptoe Newsletter</h4>
+            <p className="text-lg mb-8 text-center">Stay up to date with everything TipToe.</p>
 
             <div>
-              <div>
-                <div>
-                  <div>
-                    <input
-                      placeholder="Your email here"
-                      type="email"
-                      style={{ width: '80%' }}
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <div
-                      onClick={subscribe}
-                    > {state === "LOADING" ? "Loading" : "Send"}
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <form className="flex" onSubmit={handleSubscription}>
+                <input
+                  className="p-3 rounded-xl text-black"
+                  placeholder="Your email here"
+                  type="email"
+                  style={{ width: '80%' }}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                // required
+                />
+
+                <button
+                  type="submit"
+                  className="px-4 py-3 bg-black text-white rounded-xl font-bold ml-2 hover:bg-white hover:text-black">
+                  {isLoading ? "...Loading" : "Subscribe"}
+                </button>
+              </form>
 
               <div>
-                <div >
-                  {state === "ERROR" && <div >{errorMessage}</div>}
-                  {state === "SUCCESS" && <div >Welcome to our newsletter!</div>}
-                </div>
+                <div>{error}</div>
+                {isSubscribed && (
+                  <h3 className="text-green-500 text-center text-2xl font-bold">
+                    Yay! We'll email the goodies soon.
+                  </h3>
+                )}
               </div>
             </div>
-
-            {/* <form action="/api/subscribe" method="POST">
-            <div placeholder="Your email here" name="email" type="email" style={{ width: '80%' }} />
-            <div style={{ width: '18%', marginTop: isTabletOrMobileDevice && '30px' }}>Send</div>
-            </form> */}
-
           </div>
         </div>
       </div>
