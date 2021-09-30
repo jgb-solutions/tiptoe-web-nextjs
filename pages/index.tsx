@@ -1,8 +1,7 @@
-import { FormEvent, useState } from 'react'
+import { FormEvent, useState, useRef } from 'react'
 import Image from 'next/image'
 import { NextPage } from 'next'
 
-import Header from '../components/header'
 import Footer from '../components/footer'
 
 // import screen1 from '../public/images/screen1.jpg'
@@ -15,12 +14,20 @@ import section4Image from '../public/images/bg9.jpg'
 import appImage from "../public/images/app.png"
 import playImage from "../public/images/play.png"
 import downloadImage from "../public/images/dImage.jpg"
+import mascotLady from '../public/images/lady-website.png'
+import logo from '../public/images/logo2.png'
+
+import SEO from '../components/seo'
+
+const title = `HOME OF THE Fxxx#@B`
 
 const Homepage: NextPage = () => {
   const [email, setEmail] = useState<string>()
   const [error, setError] = useState<string>()
   const [isLoading, setIsLoading] = useState(false)
   const [isSubscribed, setIsSubscribed] = useState(false)
+
+  const downloadRef = useRef<HTMLDivElement>(null)
 
   const handleSubscription = async (event: FormEvent) => {
     event.preventDefault()
@@ -34,18 +41,52 @@ const Homepage: NextPage = () => {
     }
 
     try {
+      setIsLoading(true)
+
       const response = await fetch("/api/subscribe", {
         method: "POST",
         body: JSON.stringify({ email })
       })
+
+      setIsSubscribed(true)
     } catch (e) {
       setError(e.response.data.error)
+    } finally {
+      setIsLoading(false)
     }
   }
 
   return (
     <>
-      <Header title="Welcome" />
+      <SEO title={title} />
+
+      <section className="bg-black">
+        <header className="mx-auto md:max-w-3xl md:flex md:flex-row-reverse items-center justify-between pt-24">
+          <div className="text-white text-center mb-12">
+            <div className="">
+              <Image src={logo} height={50} width="150" />
+            </div>
+            <h2 className="text-4xl font-bold uppercase mb-2">Welcome to TipToe</h2>
+            <h4 className="text-lg mb-8 text-nightshadz italic">HOME OF THE Fxxx#@B</h4>
+
+            <button
+              onClick={() => {
+                if (downloadRef) {
+                  downloadRef.current.scrollIntoView({
+                    behavior: "smooth"
+                  })
+                }
+              }}
+              className="p-4 border-2 font-bold uppercase text-sm border-white rounded-3xl">
+              Download the app
+            </button>
+          </div>
+
+          <div className="text-center">
+            <Image src={mascotLady} width={300} height={288.56} />
+          </div>
+        </header>
+      </section>
 
       <main className="max-w-3xl mx-auto py-8">
         {/* <section className="bg-white p-4 -mt-24 rounded-3xl md:grid md:grid-cols-3 md:gap-x-4 shadow-md mb-8">
@@ -171,7 +212,7 @@ const Homepage: NextPage = () => {
       <div src="https://img-storage-dev.tiptoe.app/models/image-41.png" />
       <div src="https://img-storage-dev.tiptoe.app/models/image-42.png" /> */}
 
-      <div className="md:grid md:grid-cols-2 bg-nightshadz text-white" id="download">
+      <div className="md:grid md:grid-cols-2 bg-nightshadz text-white" ref={downloadRef}>
         <div className="md:flex md:flex-col md:justify-center mx-auto max-w-sm py-8">
           <div className="mb-8">
             <h5 className="uppercase text-3xl font-bold mb-4">Get the app!</h5>
@@ -239,3 +280,5 @@ const Homepage: NextPage = () => {
 }
 
 export default Homepage
+
+export { logo }

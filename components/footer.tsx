@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { FC } from 'react'
 
-import { logo } from './header'
+import { logo } from '../pages'
 
-const Footer = () => (
+const Footer: FC = () => (
   <>
     <footer className="bg-black py-24 text-white flex flex-col items-center">
       <div className="w-48 mb-8">
