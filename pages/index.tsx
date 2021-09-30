@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import { NextPage } from 'next'
 
@@ -16,6 +17,22 @@ import playImage from "../public/images/play.png"
 import downloadImage from "../public/images/dImage.jpg"
 
 const Homepage: NextPage = () => {
+  const [email, setEmail] = useState("")
+  const [state, setState] = useState("IDLE")
+  const [errorMessage, setErrorMessage] = useState(null)
+
+  const subscribe = async () => {
+    setState("LOADING")
+    setErrorMessage(null)
+    try {
+      const response = await fetch("/api/subscribe", { method: 'post', body: JSON.stringify({ email }) })
+      setState("SUCCESS")
+    } catch (e) {
+      setErrorMessage(e.response.data.error)
+      setState("ERROR")
+    }
+  }
+
   return (
     <>
       <Header title="Welcome" />
@@ -164,6 +181,49 @@ const Homepage: NextPage = () => {
             <Image src={downloadImage} layout="responsive" />
           </div>
 
+        </div>
+      </div>
+
+
+      <div>
+        <div>
+          <div>Join Tiptoe Newsletter</div>
+          <div>In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstra... </div>
+          <div>
+
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <input
+                      placeholder="Your email here"
+                      type="email"
+                      style={{ width: '80%' }}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <div
+                      onClick={subscribe}
+                    > {state === "LOADING" ? "Loading" : "Send"}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <div >
+                  {state === "ERROR" && <div >{errorMessage}</div>}
+                  {state === "SUCCESS" && <div >Welcome to our newsletter!</div>}
+                </div>
+              </div>
+            </div>
+
+            {/* <form action="/api/subscribe" method="POST">
+            <div placeholder="Your email here" name="email" type="email" style={{ width: '80%' }} />
+            <div style={{ width: '18%', marginTop: isTabletOrMobileDevice && '30px' }}>Send</div>
+            </form> */}
+
+          </div>
         </div>
       </div>
 

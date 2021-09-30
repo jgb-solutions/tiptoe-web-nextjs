@@ -1,12 +1,14 @@
-import Footer from '../components/footer'
 import Link from 'next/link'
 import SEO from '../components/seo'
+import { NextPage } from 'next'
+
+import Footer from '../components/footer'
 
 
-const Home = (props) => {
+const TermsConditions: NextPage = () => {
   return (
     <div>
-      <SEO title="Terms & Condition" />
+      <SEO title="Terms & Conditions" />
 
       <div>
         <div>
@@ -735,4 +737,4 @@ const Home = (props) => {
   )
 }
 
-export default Home
+export default TermsConditions
