@@ -55,8 +55,8 @@ const Homepage: NextPage = () => {
         </section> */}
 
         {/* Welcome */}
-        <section className="md:grid md:grid-cols-2 md:gap-x-3 mb-8">
-          <div className="md:flex md:flex-col md:justify-center">
+        <section className="md:grid md:grid-cols-2 md:gap-x-3 mb-8 px-4">
+          <div className="md:flex md:flex-col md:justify-center pb-8">
             <h3 className="text-3xl mb-4">Welcome to TipXToe</h3>
             <p className="mb-4 text-sm">
               With the rising popularity of foot models in the adult industry, we would love to introduce you to TIPXTOE. Being that the entire world is now using social media to showcase their talents, TIPXTOE is providing a platform designed for foot models who are looking to add an additional stream of income.
@@ -73,7 +73,7 @@ const Homepage: NextPage = () => {
         </section>
 
         {/* Models */}
-        <section className="md:grid md:grid-cols-2 md:gap-x-3 mb-8">
+        <section className="md:grid md:grid-cols-2 md:gap-x-3 mb-8 px-4">
           <div className="rounded-3xl overflow-hidden shadow-md">
             <Image src={section2Image} />
           </div>
@@ -91,8 +91,8 @@ const Homepage: NextPage = () => {
         </section>
 
         {/* Audience */}
-        <section className="md:grid md:grid-cols-2 md:gap-x-3 mb-8">
-          <div className="md:flex md:flex-col md:justify-center">
+        <section className="md:grid md:grid-cols-2 md:gap-x-3 mb-8 px-4">
+          <div className="md:flex md:flex-col md:justify-center mb-8">
             <h3 className="text-3xl mb-4">Audience</h3>
             <p className="mb-4 text-sm">
               Do you have a foot fetish? Well. TIPXTOE is here to quench your thirst!!! Our platform is designed for members who share the same passion as our models. TipXToe is where you will find the most attractive foot models showcasing the secret that lies between those toes.  I mean what's better than gorgeous feet teasing you with while you... well, we'll leave the rest up to your imagination.
@@ -109,7 +109,7 @@ const Homepage: NextPage = () => {
         </section>
 
         {/* Security */}
-        <section className="md:grid md:grid-cols-2 md:gap-x-3 mb-8">
+        <section className="md:grid md:grid-cols-2 md:gap-x-3 mb-8 px-4">
           <div className="rounded-3xl overflow-hidden shadow-md">
             <Image src={section4Image} />
           </div>
@@ -171,25 +171,23 @@ const Homepage: NextPage = () => {
       <div src="https://img-storage-dev.tiptoe.app/models/image-41.png" />
       <div src="https://img-storage-dev.tiptoe.app/models/image-42.png" /> */}
 
-      <div id="download">
-        <div className="md:grid md:grid-cols-2 bg-nightshadz text-white">
-          <div className="md:flex md:flex-col md:justify-center mx-auto max-w-sm">
-            <div className="mb-8">
-              <h5 className="uppercase text-3xl font-bold mb-4">Get the app!</h5>
-              <p className="text-lg">
-                Join thousands of loyal users using <br /> the TipToe mobile app.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-x-3">
-              <Image src={appImage} />
-              <Image src={playImage} />
-            </div>
+      <div className="md:grid md:grid-cols-2 bg-nightshadz text-white" id="download">
+        <div className="md:flex md:flex-col md:justify-center mx-auto max-w-sm py-8">
+          <div className="mb-8">
+            <h5 className="uppercase text-3xl font-bold mb-4">Get the app!</h5>
+            <p className="text-lg">
+              Join thousands of loyal users using <br /> the TipToe mobile app.
+            </p>
           </div>
 
-          <div>
-            <Image src={downloadImage} layout="responsive" />
+          <div className="grid grid-cols-2 gap-x-3">
+            <Image src={appImage} />
+            <Image src={playImage} />
           </div>
+        </div>
+
+        <div>
+          <Image src={downloadImage} layout="responsive" />
         </div>
       </div>
 
@@ -198,7 +196,7 @@ const Homepage: NextPage = () => {
         <div>
           <Image src={downloadImage} layout="responsive" />
         </div>
-        <div className="flex flex-col items-center justify-center bg-yellow-800">
+        <div className="flex flex-col items-center justify-center bg-yellow-800 py-8">
           <div className="max-w-md">
             <h4 className="text-3xl font-bold uppercase mb-4 text-center">Join Tiptoe Newsletter</h4>
             <p className="text-lg mb-8 text-center">Stay up to date with everything TipToe.</p>
