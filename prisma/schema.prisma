@@ -46,9 +46,22 @@ model User {
   name          String?
   email         String?   @unique
   emailVerified DateTime?
-  image         String?
-  accounts      Account[]
-  sessions      Session[]
+  avatar        String?
+  active        Boolean   @default(false)
+  admin         Boolean   @default(false)
+  first_login   Boolean   @default(true)
+  user_type     String?
+  is_model      Boolean   @default(false)
+  telephone     String?
+  gender        String?
+  model         Model?
+  favorites     Photo[]
+  pmLastFour    String?
+  isNew         Boolean   @default(false)
+
+  accounts Account[]
+  sessions Session[]
+  modelId  String?
 }
 
 model VerificationToken {
@@ -57,4 +70,60 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+model Model {
+  id                 String        @id @default(cuid())
+  stage_name         String
+  bucket             String
+  poster             String
+  hash               String
+  price              String
+  bio                String
+  facebook           String
+  instagram          String
+  twitter            String
+  youtube            String
+  verified           Boolean
+  followed_by_me     Boolean
+  new_follower_count Int
+  userId             String        @unique
+  user               User          @relation(fields: [userId], references: [id])
+  photos_count       Int
+  followers_count    Int
+  photos             Photo[]
+  modelAccountData   ModelAccount?
+}
+
+model ModelAccount {
+  id      String @id @default(cuid())
+  modelId String @unique
+  model   Model  @relation(fields: [modelId], references: [id])
+  account Int
+  balance Int
+}
+
+model Photo {
+  id           String   @id @default(cuid())
+  uri          String?
+  bucket       String?
+  caption      String
+  detail       String
+  featured     Boolean  @default(false)
+  for_my_model Boolean  @default(false)
+  hash         String
+  type         String
+  publish      Boolean  @default(false)
+  category     Category @relation(fields: [categoryId], references: [id])
+  model        Model    @relation(fields: [modelId], references: [id])
+  users        User[]
+  categoryId   String
+  modelId      String
+}
+
+model Category {
+  id     String  @id @default(cuid())
+  name   String
+  slug   String
+  photos Photo[]
 }
