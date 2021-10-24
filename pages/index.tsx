@@ -1,6 +1,7 @@
 import { FormEvent, useState, useRef } from 'react'
 import Image from 'next/image'
 import { NextPage } from 'next'
+import Link from 'next/link'
 
 import Footer from '../components/footer'
 
@@ -18,6 +19,8 @@ import mascotLady from '../public/images/lady-website.png'
 import logo from '../public/images/logo2.png'
 
 import SEO from '../components/seo'
+import { useSession } from 'next-auth/react'
+import { Routes } from 'routes'
 
 const title = `HOME OF THE Fxxx#@B`
 
@@ -26,8 +29,9 @@ const Homepage: NextPage = () => {
   const [error, setError] = useState<string>()
   const [isLoading, setIsLoading] = useState(false)
   const [isSubscribed, setIsSubscribed] = useState(false)
+  const session = useSession()
 
-  const downloadRef = useRef<HTMLDivElement>(null)
+  const joinRef = useRef<HTMLDivElement>(null)
 
   const handleSubscription = async (event: FormEvent) => {
     event.preventDefault()
@@ -79,18 +83,25 @@ const Homepage: NextPage = () => {
             </div>
             <h2 className="text-4xl font-bold uppercase mb-2">Welcome to TipToe</h2>
             <h4 className="text-lg mb-8 text-nightshadz italic">HOME OF THE Fxxx#@B</h4>
-
-            <button
-              onClick={() => {
-                if (downloadRef) {
-                  downloadRef.current.scrollIntoView({
-                    behavior: "smooth"
-                  })
-                }
-              }}
-              className="p-4 border-2 font-bold uppercase text-sm border-white rounded-3xl">
-              Download the app
-            </button>
+            {session.status === 'unauthenticated' ? (
+              <button
+                onClick={() => {
+                  if (joinRef) {
+                    joinRef.current.scrollIntoView({
+                      behavior: "smooth"
+                    })
+                  }
+                }}
+                className="p-4 border-2 font-bold uppercase text-sm border-white rounded-3xl">
+                Reserve your spot
+              </button>
+            ) : (
+              <Link href={Routes.x}>
+                <a className="p-4 border-2 font-bold uppercase text-sm border-white rounded-3xl">
+                  Go to app
+                </a>
+              </Link>
+            )}
           </div>
 
           <div className="text-center">
@@ -223,7 +234,7 @@ const Homepage: NextPage = () => {
       <div src="https://img-storage-dev.tiptoe.app/models/image-41.png" />
       <div src="https://img-storage-dev.tiptoe.app/models/image-42.png" /> */}
 
-      <div className="md:grid md:grid-cols-2 bg-nightshadz text-white" ref={downloadRef}>
+      {/* <div className="md:grid md:grid-cols-2 bg-nightshadz text-white">
         <div className="md:flex md:flex-col md:justify-center mx-auto max-w-sm py-8">
           <div className="mb-8">
             <h5 className="uppercase text-3xl font-bold mb-4">Get the app!</h5>
@@ -241,20 +252,20 @@ const Homepage: NextPage = () => {
         <div>
           <Image src={downloadImage} layout="responsive" />
         </div>
-      </div>
+      </div> */}
 
 
-      <div className="bg-black text-white md:flex md:flex-row-reverse">
+      <div className="bg-black text-white md:flex md:flex-row-reverse" ref={joinRef}>
         <div className="flex flex-col items-center justify-center bg-yellow-800 py-8 flex-1">
           <div className="max-w-md">
-            <h4 className="text-3xl font-bold uppercase mb-4 text-center">Join Tiptoe Newsletter</h4>
-            <p className="text-lg mb-8 text-center">Stay up to date with everything TipToe.</p>
+            <h4 className="text-3xl font-bold uppercase mb-4 text-center">Reserve your spot now!</h4>
+            <p className="text-lg mb-8 text-center">Enter your email and we'll let you know when we launch.</p>
 
             <div>
               {!isSubscribed && (
                 <form className="flex" onSubmit={handleSubscription}>
                   <input
-                    className="p-3 rounded-xl text-black"
+                    className="p-3 rounded-xl text-black flex-1"
                     placeholder="Your email here"
                     type="email"
                     value={email}
