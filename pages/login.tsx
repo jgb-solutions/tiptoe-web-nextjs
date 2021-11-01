@@ -1,13 +1,15 @@
 import { GetServerSideProps, NextPage } from "next"
 import AuthLayout from "@/components/layouts/Auth"
-import { getSession, signIn, signOut } from "next-auth/react"
+import { getSession, signIn, signOut, getProviders } from "next-auth/react"
 import { Session } from "next-auth"
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Grid from '@mui/material/Grid'
+import Image from 'next/image'
 
 import { Routes } from "routes"
+import downloadImage from "../public/images/dImage.jpg"
 
 type Props = {}
 
@@ -15,6 +17,10 @@ const X: NextPage<Props> = (props) => {
   return (
     <AuthLayout>
       <div className="flex border-2 h-screen">
+        <div className="bg-black text-white flex-1 relative">
+          <Image src={downloadImage} layout="fill" objectFit="cover" />
+        </div>
+
         <div className="md:w-1/2 flex flex-col items-center justify-center">
           <h1>
             Some page
@@ -72,9 +78,6 @@ const X: NextPage<Props> = (props) => {
             </div>
           </Box>
         </div>
-        <div className="bg-black text-white flex-1">
-          some stuff here
-        </div>
       </div>
     </AuthLayout>
   )
@@ -82,6 +85,7 @@ const X: NextPage<Props> = (props) => {
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
   const userSession = await getSession(ctx)
+  const providers = await getProviders()
 
   if (userSession) {
     return {
@@ -92,7 +96,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
     }
   }
   return {
-    props: {}
+    props: {
+      providers
+    }
   }
 }
 

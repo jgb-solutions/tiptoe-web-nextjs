@@ -1,7 +1,7 @@
 export const SMALL_SCREEN_SIZE = 768
-export const APP_NAME = `Tiptoe`
+export const APP_NAME = `TipXToe`
 export const FB_APP_ID = `232624100615967`
-export const TWITTER_HANDLE = `toptoe`
+export const TWITTER_HANDLE = `tiptoe`
 export const API_URL = process.env.API_URL || `/api`
 
 export const DOMAIN = process.env.REACT_APP_DOMAIN || `https://tiptoe.app`

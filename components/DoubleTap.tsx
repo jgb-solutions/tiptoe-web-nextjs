@@ -1,5 +1,4 @@
-import React, { ReactNode } from 'react'
-import { TouchableWithoutFeedback } from 'react-native'
+import { ReactNode } from 'react'
 
 type Props = {
   onDoubleTap: () => void,
@@ -25,8 +24,8 @@ export default function DoubleTap({
   }
 
   return (
-    <TouchableWithoutFeedback onPress={handleDoubleTap}>
+    <div onClick={handleDoubleTap}>
       {children}
-    </TouchableWithoutFeedback>
+    </div>
   )
 }

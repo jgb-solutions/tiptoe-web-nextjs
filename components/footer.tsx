@@ -1,8 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { FC } from 'react'
-
-import { logo } from '../pages'
+import Logo from './Logo'
 
 const Footer: FC = () => (
   <>
@@ -10,7 +9,7 @@ const Footer: FC = () => (
       <div className="w-48 mb-8">
         <Link href='/'>
           <a>
-            <Image src={logo} />
+            <Logo />
           </a>
         </Link>
 

@@ -16,11 +16,11 @@ import appImage from "../public/images/app.png"
 import playImage from "../public/images/play.png"
 import downloadImage from "../public/images/dImage.jpg"
 import mascotLady from '../public/images/lady-website.png'
-import logo from '../public/images/logo2.png'
 
 import SEO from '../components/seo'
 import { useSession } from 'next-auth/react'
 import { Routes } from 'routes'
+import Logo from '@/components/Logo'
 
 const title = `HOME OF THE Fxxx#@B`
 
@@ -79,7 +79,7 @@ const Homepage: NextPage = () => {
         <header className="mx-auto md:max-w-3xl md:flex md:flex-row-reverse items-center justify-between pt-24">
           <div className="text-white text-center mb-12">
             <div className="">
-              <Image src={logo} height={50} width="150" />
+              <Logo />
             </div>
             <h2 className="text-4xl font-bold uppercase mb-2">Welcome to TipToe</h2>
             <h4 className="text-lg mb-8 text-nightshadz italic">HOME OF THE Fxxx#@B</h4>
@@ -87,7 +87,7 @@ const Homepage: NextPage = () => {
               <button
                 onClick={() => {
                   if (joinRef) {
-                    joinRef.current.scrollIntoView({
+                    joinRef.current?.scrollIntoView({
                       behavior: "smooth"
                     })
                   }
@@ -305,5 +305,3 @@ const Homepage: NextPage = () => {
 }
 
 export default Homepage
-
-export { logo }

@@ -5,7 +5,9 @@ const Default: FC = ({ children }) => {
   return (
     <>
       <Header />
-      {children}
+      <div className="max-w-4xl mx-auto">
+        {children}
+      </div>
     </>
   )
 }

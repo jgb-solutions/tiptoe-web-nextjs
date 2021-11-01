@@ -1,17 +1,11 @@
 import React, { FC } from "react"
-import { Video } from "expo-av"
-import { FontAwesome } from '@expo/vector-icons'
-import { TouchableOpacity, Image } from "react-native"
-import { useNavigation } from "@react-navigation/native"
-import { Card, CardItem, Thumbnail, Text, Button, Left, Body, Right } from "native-base"
-
+import Image from 'next/image'
+import Link from 'next/link'
 import DoubleTap from "./DoubleTap"
 import { dayjs } from "../utils/dayjs"
-import { colors } from "../utils/colors"
-import { screenNames } from "../utils/screens"
 import useToggleLike from "../hooks/useToggleLike"
 import PhotoInterface from "../interfaces/PhotoInterface"
-import { SCREEN_WIDTH } from "../utils/constants"
+import { Routes } from "routes"
 
 type Props = {
 	asset: PhotoInterface
@@ -19,7 +13,6 @@ type Props = {
 }
 
 const MediaCard: FC<Props> = ({ asset, hideHeader }) => {
-	const navigation = useNavigation()
 	const { toggleLike } = useToggleLike()
 
 	const video = React.useRef(null)
@@ -36,95 +29,85 @@ const MediaCard: FC<Props> = ({ asset, hideHeader }) => {
 	}
 
 	return (
-		<Card>
+		<div>
 			{!hideHeader && (
-				<CardItem>
-					<Left>
-						<TouchableOpacity
-							onPress={() => {
-								navigation.navigate(screenNames.PublicModelProfileScreen, {
+				<div>
+					<div>
+						{/* <Link href={Routes.settings}>
+						<button
+							onClick={() => {
+								navigation.navigate(Routes.settings, {
 									hash: `${asset?.modele?.hash}`,
 								})
 							}}
 						>
 							<Thumbnail small source={{ uri: asset?.modele?.poster }} />
-						</TouchableOpacity>
+						</button>
+						</Link> */}
 
-						<Body>
-							<TouchableOpacity
-								onPress={() => {
+						<div>
+							<Link href={Routes.settings}>
+								{/* <span
+								onClick={() => {
 									navigation.navigate(screenNames.PublicModelProfileScreen, {
 										hash: `${asset?.modele?.hash}`,
 									})
 								}}
-							>
-								<Text>{asset?.is_for_me ? "Me" : asset?.modele?.stage_name}</Text>
-							</TouchableOpacity>
-						</Body>
-					</Left>
-				</CardItem>
+							> */}
+								<span>{asset?.is_for_me ? "Me" : asset?.modele?.stage_name}</span>
+								{/* </span> */}
+							</Link>
+						</div>
+					</div>
+				</div>
 			)}
 			<DoubleTap onDoubleTap={handleToggleLike}>
-				<CardItem cardBody>
+				<div>
 					{asset?.type === "photo" ? (
 						<Image
-							source={{ uri: asset?.uri }}
-							style={{
-								flex: 1,
-								height: SCREEN_WIDTH,
-								backgroundColor: colors.pink,
-							}}
-							resizeMode="cover"
+							src={asset?.uri}
 						/>
 					) : (
-						<Video
+						<video
 							ref={video}
 							style={{
 								flex: 1,
-								height: SCREEN_WIDTH,
-								backgroundColor: colors.pink,
 							}}
-							source={{
-								uri: asset?.uri,
-							}}
-							useNativeControls
-							resizeMode="contain"
-							isLooping
-							onPlaybackStatusUpdate={(status) => setStatus(() => status)}
+							src={asset?.uri}
 						/>
 					)}
-				</CardItem>
+				</div>
 			</DoubleTap>
-			<CardItem>
-				<Left>
-					<Button transparent onPress={handleToggleLike}>
-						<FontAwesome
+			<div>
+				<div>
+					<button onClick={handleToggleLike}>
+						{/* <FontAwesome
 							name={asset?.liked_by_me ? "heart" : "heart-o"}
 							style={{
 								color: colors.pink,
 								fontSize: 36,
 							}}
-						/>
+						/> */}
 
-						<Text
+						{/* <span
 							style={{
 								color: colors.darkGrey,
 							}}
 						>
 							{asset?.likes_count} like
 							{asset?.likes_count !== 1 ? "s" : ""}
-						</Text>
-					</Button>
-				</Left>
-				<Right>
-					<Text>{dayjs(asset?.created_at).fromNow()}</Text>
-				</Right>
-			</CardItem>
+						</span> */}
+					</button>
+				</div>
+				<div>
+					<span>{dayjs(asset?.created_at).fromNow()}</span>
+				</div>
+			</div>
 
-			<CardItem>
-				<Text>{asset?.caption}</Text>
-			</CardItem>
-		</Card>
+			<div>
+				<span>{asset?.caption}</span>
+			</div>
+		</div>
 	)
 }
 

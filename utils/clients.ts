@@ -1,7 +1,8 @@
 import {
   ApolloClient,
   ApolloLink,
-  createHttpLink, InMemoryCache
+  createHttpLink,
+  InMemoryCache
 } from '@apollo/client'
 import { PrismaClient } from '@prisma/client'
 import { onError } from "@apollo/client/link/error"
@@ -54,14 +55,17 @@ const apolloClient = new ApolloClient({
 
 let prisma: PrismaClient
 
-if (!global.prisma) {
-  prisma = new PrismaClient()
-  global.prisma = prisma
-} else {
-  prisma = global.prisma
+if (typeof window !== "undefined") {
+  if (!global.prisma) {
+    // prisma = new PrismaClient()
+    // global.prisma = prisma
+  } else {
+    prisma = global.prisma
+  }
 }
 
 export {
   prisma,
-  firebase
+  firebase,
+  apolloClient
 }

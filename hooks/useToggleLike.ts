@@ -1,4 +1,4 @@
-import { useMutation } from "@apollo/react-hooks"
+import { useMutation } from "@apollo/client"
 
 import { TOGGLE_LIKE } from "../graphql/mutations"
 import { FETCH_FAVORITE_PHOTOS } from "../graphql/queries"

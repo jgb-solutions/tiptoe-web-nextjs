@@ -2,8 +2,8 @@ import { GetServerSideProps, NextPage } from "next"
 import DefaultLayout from "@/components/layouts/Default"
 import { getSession, signIn, signOut } from "next-auth/react"
 import { Session } from "next-auth"
-import Button from '@mui/material/Button'
 import { Routes } from "routes"
+import MediaCard from "@/components/MediaCard"
 
 type Props = {
   userSession: Session
@@ -12,24 +12,22 @@ type Props = {
 const X: NextPage<Props> = (props) => {
   return (
     <DefaultLayout>
-      <h1>
-        Some page
-      </h1>
+      <MediaCard />
     </DefaultLayout>
   )
 }
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const userSession = await getSession(ctx)
+  // const userSession = await getSession(ctx)
 
-  if (!userSession) {
-    return {
-      redirect: {
-        destination: Routes.login,
-        permanent: false
-      }
-    }
-  }
+  // if (!userSession) {
+  //   return {
+  //     redirect: {
+  //       destination: Routes.login,
+  //       permanent: false
+  //     }
+  //   }
+  // }
   return {
     props: {}
   }
